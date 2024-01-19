@@ -1,38 +1,126 @@
+body {
+  font-family: 'Arial', sans-serif;
+  background-color: #333;
+  color: #fff;
+  scroll-behavior: auto;
+}
+
 .App {
   text-align: center;
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
-}
-
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
-}
-
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
+.content-container {
   justify-content: center;
-  font-size: calc(10px + 2vmin);
+  align-items: center;
+  padding: 0 20px; /* Add margin on both sides */
   color: white;
 }
 
-.App-link {
-  color: #61dafb;
+.left-aligned {
+  text-align: left;
+  max-width: 600px; /* Limit the width for better readability */
+  width: 100%;
 }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+.App-header {
+  background-color: #222;
+  padding: 20px;
+}
+
+h1 {
+  margin-bottom: 10px;
+  font-size: 30px;
+}
+
+.resume-download {
+  margin-top: 20px;
+}
+
+a {
+  color: #c6cc88;
+  text-decoration: none;
+}
+
+a:hover {
+  text-decoration: underline;
+}
+.recently-section {
+  margin-top: 40px;
+  position: relative;
+}
+
+.recently-heading {
+  position: relative;
+  display: inline-block;
+}
+
+.recently-hr {
+  position: absolute;
+  top: 50%;
+  left: 70px;
+  transform: translateY(-50%);
+  border: 0;
+  height: 1px;
+  width: 80vh; /* Adjust the length of the lines as needed */
+  background-color: #868686;
+  margin-right: 10px; /* Adjust the distance between the heading and the lines */
+}
+
+.recently-list {
+  padding: 20px;
+  color: #777; /* Light grey color for the bullet points */
+}
+
+.recently-list li {
+  margin-bottom: 8px;
+}
+
+.projects-section {
+  margin-top: 20px;
+}
+
+.project-item {
+  margin-top: 20px;
+}
+
+.project-tag {
+  display: inline-block;
+  padding: 2px 8px;
+  font-size: 13px;
+  background-color: #77a2c4;
+  color: #fff;
+  border-radius: 15px;
+  margin-left: 5px;
+  margin-bottom: 4px;
+}
+
+.project-mini-tag {
+  background-color: #6ec0c3; /* Adjust the color for mini projects */
+}
+
+.project-year {
+  color: #777;
+}
+
+.view-project-link {
+  display: block;
+  color: #69afd2; /* Adjust the color as needed */
+  text-decoration: none;
+  margin-top: 8px;
+}
+
+.projects-hr {
+    position: absolute;
+    top: 58%;
+    left: 110px;
+    transform: translateY(-50%);
+    border: 0;
+    height: 1px;
+    width: 80vh; /* Adjust the length of the lines as needed */
+    background-color: #868686;
+    margin-right: 10px; /* Adjust the distance between the heading and the lines */
+}
+
+.resume-download {
+  color: #69afd2;
 }
