@@ -1,11 +1,11 @@
 body {
-  font-family: 'Arial', sans-serif;
-  background-color: #333;
-  color: #fff;
-  scroll-behavior: auto;
+  background-color: #151414;
 }
 
 .App {
+  font-family: 'Arial', sans-serif;
+  background-color: #000000;
+  color: #fff;
   text-align: center;
 }
 
@@ -20,10 +20,11 @@ body {
   text-align: left;
   max-width: 600px; /* Limit the width for better readability */
   width: 100%;
+  margin-left: 300px;
 }
 
 .App-header {
-  background-color: #222;
+  background-color: #19191b;
   padding: 20px;
 }
 
@@ -77,6 +78,7 @@ a:hover {
 
 .projects-section {
   margin-top: 20px;
+  position: relative;
 }
 
 .project-item {
@@ -110,17 +112,41 @@ a:hover {
 }
 
 .projects-hr {
-    position: absolute;
-    top: 58%;
-    left: 110px;
-    transform: translateY(-50%);
-    border: 0;
-    height: 1px;
-    width: 80vh; /* Adjust the length of the lines as needed */
-    background-color: #868686;
-    margin-right: 10px; /* Adjust the distance between the heading and the lines */
+  position: absolute;
+  top: 5%;
+  left: 70px;
+  transform: translateY(-50%);
+  border: 0;
+  height: 1px;
+  width: 80vh; /* Adjust the length of the lines as needed */
+  background-color: #868686;
+  margin-right: 10px;  /* Adjust the distance between the heading and the lines */
 }
 
 .resume-download {
   color: #69afd2;
+}
+
+.spacer-hr {
+  background-color: #868686;
+  border: 0;
+  height: 1px;
+  margin-top: 40px;
+  width: 92vh; /* Adjust the length of the lines as needed */
+}
+
+
+.footer { 
+color: rgb(170, 170, 170);
+text-align: center;
+margin-top: 10px;
+}
+
+.footer-columns {
+display: flex;
+justify-content: space-between;
+}
+
+.footer-column1 {
+flex-basis: 38%; /* Adjust the width of each column as needed */
 }
