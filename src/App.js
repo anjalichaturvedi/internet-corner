@@ -9,11 +9,17 @@ import {
   IconButton,
   useColorMode,
 } from "@chakra-ui/react";
-import { MoonIcon, SunIcon } from "@chakra-ui/icons";
+import { Link, animateScroll as scroll } from 'react-scroll';
 import { Button } from "@chakra-ui/react";
 import ToggleButton from "./ToggleButton";
 
 function App() {
+  const scrollToSection = (id) => {
+    const element = document.getElementById(id);
+    if (element) {
+      element.scrollIntoView({ behavior: 'smooth' });
+    }
+  };
   return (
     <ChakraProvider>
       <div className="App">
@@ -25,12 +31,20 @@ function App() {
                 as="nav"
                 align="center"
                 justify="space-between"
-                color="white"
+                color="rgb(170, 170, 170);
+                "
               >
                 {/* Title/Brand */}
-                <Text>
-                  <a href="">Projects</a>
-                </Text>
+                <Link
+                to="project-section"
+                smooth={true}
+                duration={500}
+                spy={true}
+                offset={-70} // Adjust this value to match your layout
+                activeClass="active"
+              >
+                Projects
+              </Link>
 
                 {/* Navigation Links */}
                 <Flex align="center">
@@ -47,7 +61,8 @@ function App() {
               {/* Other content goes here */}
 
               <div className="resume-download">
-                <a href="/path/to/your/resume.pdf" download>
+                <a href="/files/Resume_Anjali_Chaturvedi.pdf"
+                  download="Resume_Anjali_Chaturvedi.pdf">
                   Download Resume →
                 </a>
               </div>
@@ -64,7 +79,7 @@ function App() {
                 </ul>
               </div>
               {/* Projects Section */}
-              <div className="projects-section">
+              <div className="projects-section" id="project-section">
                 <hr className="projects-hr" />
                 <h2>Projects</h2>
                 <div className="project-item">
