@@ -1,14 +1,22 @@
 // theme.js
-
-// 1. import `extendTheme` function
 import { extendTheme } from '@chakra-ui/react';
 
-// 2. extend the theme with color mode config
-const theme ={
+const theme = extendTheme({
   config: {
-    initialColorMode: "dark",
+    initialColorMode: 'dark',
     useSystemColorMode: false,
   },
-};
+  styles: {
+    global: {
+      body: {
+        backgroundColor: '#19191b',
+        color: 'white',
+    },
+  },
+  },
+  colors: {
+    darkColor: '#19191b', // Set your desired color for dark mode
+  },
+});
 
 export default theme;

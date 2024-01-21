@@ -1,5 +1,5 @@
 // ToggleButton.js
-import {Flex, IconButton, useColorMode } from '@chakra-ui/react';
+import { Flex, IconButton, useColorMode } from '@chakra-ui/react';
 import { MoonIcon, SunIcon } from '@chakra-ui/icons';
 
 const ToggleButton = () => {
@@ -15,7 +15,7 @@ const ToggleButton = () => {
       <IconButton
         icon={isDark ? <SunIcon /> : <MoonIcon />}
         onClick={handleToggle}
-        colorScheme="teal"
+        colorScheme="blue"
         variant="outline"
         aria-label={`Toggle ${isDark ? 'Light' : 'Dark'} Mode`}
       />
