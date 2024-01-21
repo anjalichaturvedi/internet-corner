@@ -8,10 +8,12 @@ import {
   Text,
   IconButton,
   useColorMode,
+  ColorModeProvider
 } from "@chakra-ui/react";
 import { Link, animateScroll as scroll } from 'react-scroll';
 import { Button } from "@chakra-ui/react";
 import ToggleButton from "./ToggleButton";
+import theme from './theme'; // Import the custom theme
 
 function App() {
   const scrollToSection = (id) => {
@@ -21,7 +23,8 @@ function App() {
     }
   };
   return (
-    <ChakraProvider>
+    <ChakraProvider theme={theme}>
+       <ColorModeProvider>
       <div className="App">
         <header className="App-header">
           <div className="content-container">
@@ -130,6 +133,7 @@ function App() {
           </div>
         </header>
       </div>
+      </ColorModeProvider>
     </ChakraProvider>
   );
 }

@@ -1,11 +1,8 @@
 body {
-  background-color: #151414;
 }
 
 .App {
   font-family: 'Arial', sans-serif;
-  background-color: #000000;
-  color: #fff;
   text-align: center;
 }
 
@@ -13,7 +10,6 @@ body {
   justify-content: center;
   align-items: center;
   padding: 0 20px; /* Add margin on both sides */
-  color: white;
 }
 
 .left-aligned {
@@ -24,7 +20,6 @@ body {
 }
 
 .App-header {
-  background-color: #19191b;
   padding: 20px;
 }
 
