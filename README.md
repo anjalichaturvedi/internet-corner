@@ -22,4 +22,4 @@ I'm Anjali Chaturvedi, and I love leveraging technology to empower organizations
 - Download Resume: Interested in my background? Download the resume.
 - Recently Section: Stay updated with my latest activities.
 
-If you want to use any part of it, connect with me at [LinkedIn](www.linkedin.com/in/anjali-chaturvedi) 
+If you want to use any part of it, connect with me at [LinkedIn](https://www.linkedin.com/in/anjali-chaturvedi) 
