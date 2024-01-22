@@ -145,3 +145,67 @@ justify-content: space-between;
 .footer-column1 {
 flex-basis: 38%; /* Adjust the width of each column as needed */
 }
+
+@media only screen and (max-width: 1000px) {
+  .left-aligned {
+    margin-left: 100px;
+  }
+
+  .footer-columns {
+    flex-direction: row; /* Stack columns in a vertical layout */
+    text-align: center;
+  }
+
+  .footer-column1 {
+    flex-basis: 40%; /* Take up full width on small screens */
+  }
+}
+
+/* Responsive styles for tablets (up to 768px) */
+@media only screen and (max-width: 768px) {
+  .left-aligned {
+    margin-left: 0;
+  }
+
+  .footer-columns {
+    flex-direction: row; /* Stack columns in a vertical layout */
+    text-align: center;
+  }
+
+  .footer-column1 {
+    flex-basis: 40%; /* Take up full width on small screens */
+  }
+}
+
+/* Responsive styles for mobile devices (up to 480px) */
+@media only screen and (max-width: 480px) {
+  .content-container {
+    padding: 0 10px; /* Reduce padding on small screens */
+  }
+
+  .left-aligned {
+    margin-left: 0;
+  }
+
+  .recently-hr,
+  .projects-hr,
+  .spacer-hr {
+    width: 100%; /* Full width horizontal lines on small screens */
+    left: 0;
+    margin-right: 0;
+  }
+
+  .recently-list,
+  .projects-section,
+  .project-item {
+    margin-top: 10px; /* Adjust spacing for small screens */
+  }
+
+  .footer-columns {
+    flex-direction: row; /* Stack columns in a vertical layout */
+  }
+
+  .footer-column1 {
+    flex-basis: 100%; /* Take up full width on small screens */
+  }
+}
