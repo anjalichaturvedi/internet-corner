@@ -1,7 +1,7 @@
 {
-  "homepage": "https://anjalichaturvedi.github.io/internet-corner",
   "name": "internet-corner",
   "version": "0.1.0",
+  "homepage": "https://anjalichaturvedi.github.io/internet-corner",
   "private": true,
   "dependencies": {
     "@chakra-ui/icons": "^2.1.1",
