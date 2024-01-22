@@ -76,9 +76,9 @@ function App() {
                   <h2>Recently</h2>
                 </div>
                 <ul className="recently-list">
-                  <li>Item 1</li>
-                  <li>Item 2</li>
-                  <li>Item 3</li>
+                  <li>Organizing an all-women hackathon, fostering a supportive and inclusive environment for female participation in technology.</li>
+                  <li>Admitted into Codess Cafe mentorship program focused on elevating women in tech</li>
+                  <li>Initiated machine learning research to optimize resource allocation in IoT networks</li>
                 </ul>
               </div>
               {/* Projects Section */}
