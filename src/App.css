@@ -60,7 +60,7 @@ a:hover {
   transform: translateY(-50%);
   border: 0;
   height: 1px;
-  width: 80vh; /* Adjust the length of the lines as needed */
+  width: 85vh; /* Adjust the length of the lines as needed */
   background-color: #868686;
   margin-right: 10px; /* Adjust the distance between the heading and the lines */
 }
@@ -117,7 +117,7 @@ a:hover {
   transform: translateY(-50%);
   border: 0;
   height: 1px;
-  width: 80vh; /* Adjust the length of the lines as needed */
+  width: 85vh; /* Adjust the length of the lines as needed */
   background-color: #868686;
   margin-right: 10px;  /* Adjust the distance between the heading and the lines */
 }
@@ -131,7 +131,7 @@ a:hover {
   border: 0;
   height: 1px;
   margin-top: 40px;
-  width: 92vh; /* Adjust the length of the lines as needed */
+  width: 100vh; /* Adjust the length of the lines as needed */
 }
 
 
@@ -179,6 +179,20 @@ flex-basis: 38%; /* Adjust the width of each column as needed */
   .footer-column1 {
     flex-basis: 40%; /* Take up full width on small screens */
   }
+
+  .recently-hr {
+    width: 60vh;
+  }
+
+  .projects-hr {
+    width: 60vh;
+  }
+
+  .spacer-hr {
+    width: 100%; /* Full width horizontal lines on small screens */
+    left: 0;
+    margin-right: 0;
+  }
 }
 
 /* Responsive styles for mobile devices (up to 480px) */
@@ -194,7 +208,7 @@ flex-basis: 38%; /* Adjust the width of each column as needed */
   .recently-hr,
   .projects-hr,
   .spacer-hr {
-    width: 100%; /* Full width horizontal lines on small screens */
+    width: 60%; /* Full width horizontal lines on small screens */
     left: 0;
     margin-right: 0;
   }
