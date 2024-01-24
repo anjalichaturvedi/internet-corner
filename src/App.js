@@ -92,7 +92,7 @@ function App() {
                     <span className="project-tag">Project</span>
                   </h3>
                   <p>A React-powered personal website featuring project showcases and a resume, designed with precision to deliver an engaging and dynamic user experience.</p>
-                  <p className="project-year">2023</p>
+                  <p className="project-year">2024</p>
                   <a href="https://github.com/anjalichaturvedi/anjalichaturvedi.github.io" className="view-project-link">
                     View Source Code →
                   </a>
