@@ -13,7 +13,7 @@
 
 .left-aligned {
   text-align: left;
-  max-width: 600px; /* Limit the width for better readability */
+  max-width: 580px; /* Limit the width for better readability */
   width: 100%;
   margin-left: 300px;
 }
@@ -131,7 +131,7 @@ a:hover {
   border: 0;
   height: 1px;
   margin-top: 40px;
-  width: 100vh; /* Adjust the length of the lines as needed */
+  width: 98vh; /* Adjust the length of the lines as needed */
 }
 
 

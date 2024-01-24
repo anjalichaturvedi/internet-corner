@@ -160,7 +160,7 @@ function App() {
                         {""}
                         LinkedIn{""}
                       </a>
-                      <a href="https://www.linkedin.com/in/anjali-chaturvedi" style={{ marginLeft: "20px" }}>
+                      <a href="mailto:contact@anjalichaturvedi.tech" style={{ marginLeft: "20px" }}>
                         {""}
                         Email{""}
                       </a>
