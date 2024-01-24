@@ -36,6 +36,7 @@ function App() {
                 justify="space-between"
                 color="rgb(170, 170, 170);
                 "
+                className="link"
               >
                 {/* Title/Brand */}
                 <Link
