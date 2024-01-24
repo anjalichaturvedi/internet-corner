@@ -88,27 +88,62 @@ function App() {
                 <h2>Projects</h2>
                 <div className="project-item">
                   <h3>
-                    Project Name 1
-                    <span className="project-tag">Mini Project</span>
+                    Internet Corner (this website)
+                    <span className="project-tag">Project</span>
                   </h3>
-                  <p>Project description goes here...</p>
+                  <p>A React-powered personal website featuring project showcases and a resume, designed with precision to deliver an engaging and dynamic user experience.</p>
                   <p className="project-year">2023</p>
-                  <a href="/path-to-project" className="view-project-link">
+                  <a href="https://github.com/anjalichaturvedi/anjalichaturvedi.github.io" className="view-project-link">
+                    View Source Code →
+                  </a>
+                </div>
+                <div className="project-item">
+                  <h3>
+                    Smart Scheduler
+                    <span className="project-tag">Project</span>
+                  </h3>
+                  <p>A web application developed in PHP, SQL, HTML/CSS, and JavaScript, providing a user-friendly platform for administrators, teachers, and students to efficiently manage and view timetables in educational institutions.</p>
+                  <p className="project-year">2023</p>
+                  <a target="_blank"  href="https://smart-scheduler.000webhostapp.com/index.php" className="view-project-link">
                     View Project →
                   </a>
                 </div>
                 <div className="project-item">
                   <h3>
-                    Project Name 2
+                    Markdown Generator
                     <span className="project-tag">Mini Project</span>
                   </h3>
-                  <p>Project description goes here...</p>
-                  <p className="project-year">2022</p>
-                  <a href="/path-to-project" className="view-project-link">
+                  <p>React-based web application for effortlessly creating, editing, and generating Markdown tables with a user-friendly interface.
+</p>
+                  <p className="project-year">2023</p>
+                  <a target="_blank"  href="markdown-generator-phi.vercel.app" className="view-project-link">
                     View Project →
                   </a>
                 </div>
-                {/* Add more project items as needed */}
+                <div className="project-item">
+                  <h3>
+                    Password Generator
+                    <span className="project-tag">Mini Project</span>
+                  </h3>
+                  <p>React-based password generator built with Chakra UI allows users to customize and generate secure passwords based on their preferences.
+</p>
+                  <p className="project-year">2023</p>
+                  <a target="_blank" href="https://password-generator-rust-kappa.vercel.app" className="view-project-link">
+                    View Project →
+                  </a>
+                </div>
+                <div className="project-item">
+                  <h3>
+                    Blood Bank System
+                    <span className="project-tag">Mini Project</span>
+                  </h3>
+                  <p>A blood bank management system created with PHP and SQL, connecting users and hospitals for seamless blood donation coordination and efficient inventory management.
+</p>
+                  <p className="project-year">2023</p>
+                  <a target="_blank" href="https://github.com/anjalichaturvedi/template-blood-bank" className="view-project-link">
+                    View Source Code →
+                  </a>
+                </div>
               </div>
 
               <hr className="spacer-hr" />
