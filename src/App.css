@@ -80,6 +80,7 @@ a:hover {
 }
 
 .project-item {
+  display: inline-block;
   margin-top: 20px;
 }
 
@@ -103,7 +104,7 @@ a:hover {
 }
 
 .view-project-link {
-  display: block;
+  display: inline-block;
   color: #69afd2; /* Adjust the color as needed */
   text-decoration: none;
   margin-top: 8px;
@@ -111,7 +112,7 @@ a:hover {
 
 .projects-hr {
   position: absolute;
-  top: 5%;
+  top: 1.5%;
   left: 70px;
   transform: translateY(-50%);
   border: 0;
