@@ -1,3 +1,5 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter');
+
 .App {
   font-family: 'Inter', sans-serif;
   text-align: center;
@@ -29,8 +31,12 @@ h1 {
   margin-top: 20px;
 }
 
+.resume-download a {
+  color: #69afd2;
+}
+
 a {
-  color: #c6cc88;
+  color: rgb(170, 170, 170);
   text-decoration: none;
 }
 
