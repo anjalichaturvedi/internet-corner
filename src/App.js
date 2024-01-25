@@ -66,7 +66,7 @@ function App() {
                 {/* Navigation Links */}
                 <Flex align="center">
                 <IconButton
-                  icon={theme === 'light' ? <MoonIcon /> : <SunIcon />}
+                  icon={theme === 'dark' ? <MoonIcon /> : <SunIcon />}
                   onClick={toggleTheme}
                   aria-label="Toggle Theme"
                 />
