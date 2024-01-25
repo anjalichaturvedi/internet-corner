@@ -1,7 +1,7 @@
-@import url('https://fonts.googleapis.com/css2?family=Inter');
+@import url("https://fonts.googleapis.com/css2?family=Inter");
 
 .App {
-  font-family: 'Inter', sans-serif;
+  font-family: "Inter", sans-serif;
   text-align: center;
 }
 
@@ -20,26 +20,26 @@
 .dark {
   background-color: #1d1d1d;
   color: #fff;
-    .recently-list li {
-      color: #e4e4e4;
+  .recently-list li {
+    color: #e4e4e4;
   }
 }
 
 .light {
   background-color: #fff;
   color: #333;
-    .back-to-top-button {
-      background-color: #d9d9d9;
-    }
-    .footer {
-      color: #5c5c5c;
-    }
-    .project-header {
-      color: #5c5c5c;
-    }
-    .company-link {
-      border-bottom: 2px solid #7fa9c5	; 
-    }
+  .back-to-top-button {
+    background-color: #d9d9d9;
+  }
+  .footer {
+    color: #5c5c5c;
+  }
+  .project-header {
+    color: #5c5c5c;
+  }
+  .company-link {
+    border-bottom: 2px solid #7fa9c5;
+  }
 }
 
 .link {
@@ -162,7 +162,7 @@ a:hover {
   height: 1px;
   width: 95vh; /* Adjust the length of the lines as needed */
   background-color: #868686;
-  margin-right: 10px;  /* Adjust the distance between the heading and the lines */
+  margin-right: 10px; /* Adjust the distance between the heading and the lines */
 }
 
 .project-item {
@@ -181,23 +181,22 @@ a:hover {
   width: auto; /* Adjust the length of the lines as needed */
 }
 
-.footer { 
-color: rgb(170, 170, 170);
-text-align: center;
-margin-top: 10px;
+.footer {
+  color: rgb(170, 170, 170);
+  text-align: center;
+  margin-top: 10px;
 }
 
 .footer-columns {
-display: flex;
-justify-content: space-between;
+  display: flex;
+  justify-content: space-between;
 }
 
 .footer-column1 {
-flex-basis: 10%; /* Adjust the width of each column as needed */
+  flex-basis: 10%; /* Adjust the width of each column as needed */
 }
 
 @media only screen and (max-width: 1050px) {
-
   .left-aligned {
     margin-left: 140px;
   }
@@ -237,7 +236,6 @@ flex-basis: 10%; /* Adjust the width of each column as needed */
 }
 
 @media only screen and (max-width: 1000px) {
-
   .left-aligned {
     margin-left: 50px;
   }
@@ -317,11 +315,11 @@ flex-basis: 10%; /* Adjust the width of each column as needed */
   }
 
   .recently-hr {
-    width: 30vh;
+    width: 35vh;
   }
 
   .projects-hr {
-    width: 30vh;
+    width: 35vh;
     top: 1.2%;
   }
 
@@ -359,14 +357,14 @@ flex-basis: 10%; /* Adjust the width of each column as needed */
   border-radius: 10px;
   padding: 15px;
   cursor: pointer;
-  background-color: #A9A9A9;
+  background-color: #a9a9a9;
   color: #1d1d1d;
 }
 
 .company-link {
   color: #69afd2; /* Adjust the color as needed */
   font-weight: 500;
-  border-bottom: 2px solid #36454F	; 
+  border-bottom: 2px solid #36454f;
   text-decoration: none;
 }
 
