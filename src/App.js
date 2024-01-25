@@ -1,4 +1,5 @@
 import React, { useState, useEffect } from "react";
+import Cursor from "./components/cursor";
 import "./App.css";
 import {
   ChakraProvider,
@@ -11,12 +12,9 @@ import {
   ColorModeProvider,
 } from "@chakra-ui/react";
 import { Link, animateScroll as scroll } from "react-scroll";
-import { ArrowUpIcon } from "@chakra-ui/icons";
 import { Tooltip } from "@chakra-ui/react";
 import { SunIcon, MoonIcon } from "@chakra-ui/icons";
 import { Button } from "@chakra-ui/react";
-import ToggleButton from "./ToggleButton";
-import theme from "./theme"; // Import the custom theme
 
 function App() {
   const scrollToTop = () => {
@@ -44,6 +42,7 @@ function App() {
       element.scrollIntoView({ behavior: "smooth" });
     }
   };
+  const [scaling, setscaling] = useState(false);
   return (
     <div className={`App ${theme}`}>
       <ChakraProvider theme={theme}>
