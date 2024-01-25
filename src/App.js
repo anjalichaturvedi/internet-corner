@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useState, useEffect } from "react";
 import "./App.css";
 import {
   ChakraProvider,
@@ -11,11 +11,23 @@ import {
   ColorModeProvider
 } from "@chakra-ui/react";
 import { Link, animateScroll as scroll } from 'react-scroll';
+import { SunIcon, MoonIcon } from "@chakra-ui/icons";
 import { Button } from "@chakra-ui/react";
 import ToggleButton from "./ToggleButton";
 import theme from './theme'; // Import the custom theme
 
 function App() {
+  const [theme, setTheme] = useState('light');
+  const toggleTheme = () => {
+    if (theme === 'light') {
+      setTheme('dark');
+    } else {
+      setTheme('light');
+    }
+  };
+  useEffect(() => {
+    document.body.className = theme;
+  }, [theme]);
   const scrollToSection = (id) => {
     const element = document.getElementById(id);
     if (element) {
@@ -23,6 +35,7 @@ function App() {
     }
   };
   return (
+    <div className={`App ${theme}`}>
     <ChakraProvider theme={theme}>
        <ColorModeProvider>
       <div className="App">
@@ -52,8 +65,11 @@ function App() {
 
                 {/* Navigation Links */}
                 <Flex align="center">
-                  {/* Dark Mode Toggle */}
-                  <ToggleButton />
+                <IconButton
+                  icon={theme === 'light' ? <MoonIcon /> : <SunIcon />}
+                  onClick={toggleTheme}
+                  aria-label="Toggle Theme"
+                />
                 </Flex>
               </Flex>
               <h1>Hi, I am Anjali Chaturvedi</h1>
@@ -156,11 +172,11 @@ function App() {
                   <div className="footer-column1">
                     <p>
                       <a href="https://www.github.com/anjalichaturvedi"> GitHub</a>
-                      <a href="https://www.linkedin.com/in/anjali-chaturvedi" style={{ marginLeft: "20px" }}>
+                      <a href="https://www.linkedin.com/in/anjali-chaturvedi" style={{ marginLeft: "30px" }}>
                         {""}
                         LinkedIn{""}
                       </a>
-                      <a href="mailto:contact@anjalichaturvedi.tech" style={{ marginLeft: "20px" }}>
+                      <a href="mailto:contact@anjalichaturvedi.tech" style={{ marginLeft: "30px" }}>
                         {""}
                         Email{""}
                       </a>
@@ -175,6 +191,7 @@ function App() {
       </div>
       </ColorModeProvider>
     </ChakraProvider>
+    </div>
   );
 }
 

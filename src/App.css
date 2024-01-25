@@ -5,6 +5,19 @@
   text-align: center;
 }
 
+.dark {
+  background-color: #1d1d1d;
+  color: #fff;
+}
+.light {
+  background-color: #fff;
+  color: #333;
+}
+
+.link {
+  margin-bottom: 20px;
+  margin-top: 20px;
+}
 .content-container {
   justify-content: center;
   align-items: center;
@@ -13,9 +26,9 @@
 
 .left-aligned {
   text-align: left;
-  max-width: 580px; /* Limit the width for better readability */
+  max-width: 650px; /* Limit the width for better readability */
   width: 100%;
-  margin-left: 300px;
+  margin-left: 270px;
 }
 
 .App-header {
@@ -60,14 +73,13 @@ a:hover {
   transform: translateY(-50%);
   border: 0;
   height: 1px;
-  width: 85vh; /* Adjust the length of the lines as needed */
+  width: 95vh; /* Adjust the length of the lines as needed */
   background-color: #868686;
   margin-right: 10px; /* Adjust the distance between the heading and the lines */
 }
 
 .recently-list {
-  padding: 20px;
-  color: #dbdbdb; /* Light grey color for the bullet points */
+  padding: 20px; /* Light grey color for the bullet points */
 }
 
 .recently-list li {
@@ -117,7 +129,7 @@ a:hover {
   transform: translateY(-50%);
   border: 0;
   height: 1px;
-  width: 85vh; /* Adjust the length of the lines as needed */
+  width: 95vh; /* Adjust the length of the lines as needed */
   background-color: #868686;
   margin-right: 10px;  /* Adjust the distance between the heading and the lines */
 }
@@ -131,7 +143,7 @@ a:hover {
   border: 0;
   height: 1px;
   margin-top: 40px;
-  width: 98vh; /* Adjust the length of the lines as needed */
+  width: auto; /* Adjust the length of the lines as needed */
 }
 
 
@@ -147,7 +159,7 @@ justify-content: space-between;
 }
 
 .footer-column1 {
-flex-basis: 38%; /* Adjust the width of each column as needed */
+flex-basis: 10%; /* Adjust the width of each column as needed */
 }
 
 @media only screen and (max-width: 1000px) {
