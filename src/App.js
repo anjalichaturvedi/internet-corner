@@ -185,11 +185,11 @@ function App() {
                   <div className="footer-column1">
                     <p>
                       <a href="https://www.github.com/anjalichaturvedi"> GitHub</a>
-                      <a href="https://www.linkedin.com/in/anjali-chaturvedi" style={{ marginLeft: "30px" }}>
+                      <a href="https://www.linkedin.com/in/anjali-chaturvedi" style={{ marginLeft: "15px" }}>
                         {""}
                         LinkedIn{""}
                       </a>
-                      <a href="mailto:contact@anjalichaturvedi.tech" style={{ marginLeft: "30px" }}>
+                      <a href="mailto:contact@anjalichaturvedi.tech" style={{ marginLeft: "15px" }}>
                         {""}
                         Email{""}
                       </a>
