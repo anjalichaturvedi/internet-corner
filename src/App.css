@@ -5,19 +5,48 @@
   text-align: center;
 }
 
+.custom-icon-button {
+  color: #69afd2;
+  padding: 10px;
+  font-size: 20px;
+  cursor: pointer;
+  transition: transform 0.3s ease; /* Adding transition for smooth effect */
+}
+
+.custom-icon-button:hover {
+  transform: scale(1.1); /* Scale up a bit on hover, adjust as needed */
+}
+
 .dark {
   background-color: #1d1d1d;
   color: #fff;
+    .recently-list li {
+      color: #e4e4e4;
+  }
 }
+
 .light {
   background-color: #fff;
   color: #333;
+    .back-to-top-button {
+      background-color: #d9d9d9;
+    }
+    .footer {
+      color: #5c5c5c;
+    }
+    .project-header {
+      color: #5c5c5c;
+    }
+    .company-link {
+      border-bottom: 2px solid #7fa9c5	; 
+    }
 }
 
 .link {
   margin-bottom: 20px;
   margin-top: 20px;
 }
+
 .content-container {
   justify-content: center;
   align-items: center;
@@ -50,12 +79,14 @@ h1 {
 
 a {
   color: rgb(170, 170, 170);
-  text-decoration: none;
 }
 
 a:hover {
   text-decoration: underline;
+  background-position: 0 0;
+  transition: background-position 0.3s ease;
 }
+
 .recently-section {
   margin-top: 40px;
   position: relative;
@@ -125,13 +156,17 @@ a:hover {
 .projects-hr {
   position: absolute;
   top: 1.5%;
-  left: 70px;
+  left: 65px;
   transform: translateY(-50%);
   border: 0;
   height: 1px;
   width: 95vh; /* Adjust the length of the lines as needed */
   background-color: #868686;
   margin-right: 10px;  /* Adjust the distance between the heading and the lines */
+}
+
+.project-item {
+  margin-bottom: 10px;
 }
 
 .resume-download {
@@ -145,7 +180,6 @@ a:hover {
   margin-top: 40px;
   width: auto; /* Adjust the length of the lines as needed */
 }
-
 
 .footer { 
 color: rgb(170, 170, 170);
@@ -238,4 +272,28 @@ flex-basis: 10%; /* Adjust the width of each column as needed */
   .footer-column1 {
     flex-basis: 100%; /* Take up full width on small screens */
   }
+}
+
+.back-to-top-button {
+  font-size: small;
+  position: fixed;
+  font-weight: 500;
+  margin-top: 20px;
+  width: 100%;
+  border-radius: 10px;
+  padding: 15px;
+  cursor: pointer;
+  background-color: #A9A9A9;
+  color: #1d1d1d;
+}
+
+.company-link {
+  color: #69afd2; /* Adjust the color as needed */
+  font-weight: 500;
+  border-bottom: 2px solid #36454F	; 
+  text-decoration: none;
+}
+
+.company-link:hover {
+  text-decoration: none;
 }

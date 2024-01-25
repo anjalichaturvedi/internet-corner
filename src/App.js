@@ -11,13 +11,22 @@ import {
   ColorModeProvider
 } from "@chakra-ui/react";
 import { Link, animateScroll as scroll } from 'react-scroll';
+import { ArrowUpIcon } from "@chakra-ui/icons";
+import { Tooltip } from "@chakra-ui/react";
 import { SunIcon, MoonIcon } from "@chakra-ui/icons";
 import { Button } from "@chakra-ui/react";
 import ToggleButton from "./ToggleButton";
 import theme from './theme'; // Import the custom theme
 
 function App() {
-  const [theme, setTheme] = useState('light');
+  const scrollToTop = () => {
+    scroll.scrollToTop({
+      duration: 500, // Adjust the scroll duration as needed
+      smooth: "easeInOutQuad", // Adjust the scroll animation as needed
+    });
+  };
+
+  const [theme, setTheme] = useState('dark');
   const toggleTheme = () => {
     if (theme === 'light') {
       setTheme('dark');
@@ -28,6 +37,7 @@ function App() {
   useEffect(() => {
     document.body.className = theme;
   }, [theme]);
+  
   const scrollToSection = (id) => {
     const element = document.getElementById(id);
     if (element) {
@@ -42,6 +52,7 @@ function App() {
         <header className="App-header">
           <div className="content-container">
             <div className="left-aligned">
+              
               {/* Navigation Bar */}
               <Flex
                 as="nav"
@@ -59,13 +70,15 @@ function App() {
                 spy={true}
                 offset={-70} // Adjust this value to match your layout
                 activeClass="active"
+                className="project-header"
               >
                 Projects
               </Link>
-
+              
                 {/* Navigation Links */}
                 <Flex align="center">
                 <IconButton
+                  className="custom-icon-button" // Apply the custom class
                   icon={theme === 'dark' ? <MoonIcon /> : <SunIcon />}
                   onClick={toggleTheme}
                   aria-label="Toggle Theme"
@@ -93,9 +106,9 @@ function App() {
                   <h2>Recently</h2>
                 </div>
                 <ul className="recently-list">
-                  <li>Organizing an all-women hackathon, fostering a supportive and inclusive environment for female participation in technology.</li>
-                  <li>Admitted into Codess Cafe mentorship program focused on elevating women in tech</li>
-                  <li>Initiated machine learning research to optimize resource allocation in IoT networks</li>
+                  <li>Serving as an organizational lead for an all-women hackathon, fostering a supportive and inclusive environment at <a target="_blank" href="https://www.hackbrew.tech" className="company-link">Hack Brew</a> </li>
+                  <li>Admitted into <a target="_blank" href="https://www.linkedin.com/company/codesscafe/" className="company-link"> Codess Cafe </a> mentorship program focused on elevating women in tech</li>
+                  <li>Researching machine learning techniques to optimize resource allocation in IoT networks</li>
                 </ul>
               </div>
               {/* Projects Section */}
@@ -132,7 +145,7 @@ function App() {
                   <p>React-based web application for effortlessly creating, editing, and generating Markdown tables with a user-friendly interface.
 </p>
                   <p className="project-year">2023</p>
-                  <a target="_blank"  href="markdown-generator-phi.vercel.app" className="view-project-link">
+                  <a target="_blank"  href="https://markdown-generator-phi.vercel.app" className="view-project-link">
                     View Project →
                   </a>
                 </div>
@@ -184,7 +197,17 @@ function App() {
                     {/* Add more content for the second column as needed */}
                   </div>
                 </div>
+                <Tooltip>
+    <Button
+      className="back-to-top-button"
+      onClick={scrollToTop}
+      size="md"
+    >
+      Back to Top ↑
+    </Button>
+  </Tooltip>
               </div>
+              
             </div>
           </div>
         </header>
