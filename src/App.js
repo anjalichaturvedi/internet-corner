@@ -119,16 +119,38 @@ function App() {
                         </a>{" "}
                       </li>
                       <li>
-                        Admitted into{" "}
+                        Recipient of the Empowerment Fund for{" "}
                         <a
                           target="_blank"
-                          href="https://www.linkedin.com/company/codesscafe/"
+                          href="https://womenpm.org"
                           className="company-link"
                         >
                           {" "}
-                          Codess Cafe{" "}
+                          Women in Product 2024{" "}
+                        </a>
+                      </li>
+                      <li>
+                        Awarded scholarship for{" "}
+                        <a
+                          target="_blank"
+                          href="https://womenpm.org"
+                          className="company-link"
+                        >
+                          {" "}
+                          Women in Tech Global Conference 2024{" "}
+                        </a>
+                      </li>
+                      <li>
+                        Selected as a student trainee for{" "}
+                        <a
+                          target="_blank"
+                          href="https://codeinplace.stanford.edu"
+                          className="company-link"
+                        >
+                          {" "}
+                          Stanford Code in Place{" "}
                         </a>{" "}
-                        mentorship program focused on elevating women in tech
+                        out of 30000+ applications
                       </li>
                       <li>
                         Researching machine learning techniques to optimize
@@ -153,6 +175,24 @@ function App() {
                       <p className="project-year">2024</p>
                       <a
                         href="https://github.com/anjalichaturvedi/anjalichaturvedi.github.io"
+                        className="view-project-link"
+                      >
+                        View Source Code →
+                      </a>
+                    </div>
+                    <div className="project-item">
+                      <h3>
+                        Talent Track
+                        <span className="project-tag">Project</span>
+                      </h3>
+                      <p>
+                        Python and SQL-based application to streamline the
+                        process of analyzing, storing, and comparing candidate
+                        data.
+                      </p>
+                      <p className="project-year">2024</p>
+                      <a
+                        href="https://github.com/anjalichaturvedi/talent-track"
                         className="view-project-link"
                       >
                         View Source Code →
