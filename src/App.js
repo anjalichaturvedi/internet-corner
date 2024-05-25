@@ -93,7 +93,7 @@ function App() {
 
                   <div className="resume-download">
                     <a
-                      href="/files/Resume_Anjali_Chaturvedi.pdf"
+                      href="files/Resume_Anjali_Chaturvedi_Summer.pdf"
                       download="Resume_Anjali_Chaturvedi.pdf"
                     >
                       Download Resume →
@@ -107,55 +107,48 @@ function App() {
                     </div>
                     <ul className="recently-list">
                       <li>
-                        Serving as an organizational lead for an all-women
-                        hackathon, fostering a supportive and inclusive
-                        environment at{" "}
+                      Organizing a 10-week mentorship initiative within {""}
                         <a
                           target="_blank"
-                          href="https://www.hackbrew.tech"
+                          href="https://www.linkedin.com/company/nodebrew"
                           className="company-link"
                         >
-                          Hack Brew
-                        </a>{" "}
+                          Nodebrew's
+                        </a>{" "} community, driving unparalleled growth and skill development
                       </li>
                       <li>
-                        Recipient of the Empowerment Fund for{" "}
+                      Implementing innovative strategies to captivate audiences and broaden reach for {" "}
                         <a
                           target="_blank"
-                          href="https://womenpm.org"
-                          className="company-link"
-                        >
-                          {" "}
-                          Women in Product 2024{" "}
-                        </a>
-                      </li>
-                      <li>
-                        Awarded scholarship for{" "}
-                        <a
-                          target="_blank"
-                          href="https://womenpm.org"
+                          href="https://linkedin.com/company/skillarena"
                           className="company-link"
                         >
                           {" "}
-                          Women in Tech Global Conference 2024{" "}
-                        </a>
-                      </li>
+                          Skillarena{" "}
+                        </a> as their Summer Associate
+                      </li> 
                       <li>
-                        Selected as a student trainee for{" "}
+                      Empowering aspiring technologists at {" "}
                         <a
                           target="_blank"
-                          href="https://codeinplace.stanford.edu"
+                          href="https://linkedin.com/company/codesscafe"
                           className="company-link"
                         >
                           {" "}
-                          Stanford Code in Place{" "}
-                        </a>{" "}
-                        out of 30000+ applications
-                      </li>
+                          Codess Cafe{" "}
+                        </a> through personalized mentorship in the realm of open source
+                      </li> 
                       <li>
-                        Researching machine learning techniques to optimize
-                        resource allocation in IoT networks
-                      </li>
+                      Creating a cutting-edge curriculum for mastering technical interviews and conquering complex coding challenges  {" "}
+                        <a
+                          target="_blank"
+                          href="https://linkedin.com/company/codepath"
+                          className="company-link"
+                        >
+                          {" "}
+                          CodePath{" "}
+                        </a> 
+                      </li> 
                     </ul>
                   </div>
                   {/* Projects Section */}
@@ -175,6 +168,22 @@ function App() {
                       <p className="project-year">2024</p>
                       <a
                         href="https://github.com/anjalichaturvedi/anjalichaturvedi.github.io"
+                        className="view-project-link"
+                      >
+                        View Source Code →
+                      </a>
+                    </div>
+                    <div className="project-item">
+                      <h3>
+                        Campus Navigator
+                        <span className="project-tag">Project</span>
+                      </h3>
+                      <p>
+                      A user-centric web application developed in JavaScript and Leaflet, poised to redefine accessibility and convenience for students, faculty, and visitors alike.
+                      </p>
+                      <p className="project-year">2024</p>
+                      <a
+                        href="https://github.com/anjalichaturvedi/campus-navigator"
                         className="view-project-link"
                       >
                         View Source Code →
