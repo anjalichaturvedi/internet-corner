@@ -106,7 +106,7 @@ function App() {
                       <h2>Recently</h2>
                     </div>
                     <ul className="recently-list">
-                      <li>
+                      <li> 
                       Organizing a 10-week mentorship initiative within {""}
                         <a
                           target="_blank"
@@ -115,7 +115,7 @@ function App() {
                         >
                           Nodebrew's
                         </a>{" "} community, driving unparalleled growth and skill development
-                      </li>
+                      </li>  {/* Recently Section 
                       <li>
                       Implementing innovative strategies to captivate audiences and broaden reach for {" "}
                         <a
@@ -126,7 +126,7 @@ function App() {
                           {" "}
                           Skillarena{" "}
                         </a> as their Summer Associate
-                      </li> 
+                      </li> */}
                       <li>
                       Empowering aspiring technologists at {" "}
                         <a
