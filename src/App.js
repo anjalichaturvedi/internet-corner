@@ -107,14 +107,14 @@ function App() {
                     </div>
                     <ul className="recently-list">
                       <li> 
-                      Organizing a 10-week mentorship initiative within {""}
+                      Working as a Growth Associate @ {" "}
                         <a
                           target="_blank"
-                          href="https://www.linkedin.com/company/nodebrew"
+                          href="https://www.linkedin.com/company/skillarena"
                           className="company-link"
                         >
-                          Nodebrew's
-                        </a>{" "} community, driving unparalleled growth and skill development
+                           Skillarena
+                        </a>{" "} where I focus on boosting the platform's visibility and helping it grow.
                       </li>  {/* Recently Section 
                       <li>
                       Implementing innovative strategies to captivate audiences and broaden reach for {" "}
@@ -128,25 +128,24 @@ function App() {
                         </a> as their Summer Associate
                       </li> */}
                       <li>
-                      Empowering aspiring technologists at {" "}
+                      Started a Community Newsletter @ {" "}
                         <a
                           target="_blank"
-                          href="https://linkedin.com/company/codesscafe"
+                          href="https://linkedin.com/company/nodebrew"
                           className="company-link"
                         >
                           {" "}
-                          Codess Cafe{" "}
-                        </a> through personalized mentorship in the realm of open source
+                          Nodebrew{" "}
+                        </a> to help engage and connect our community members
                       </li> 
                       <li>
-                      Creating a cutting-edge curriculum for mastering technical interviews and conquering complex coding challenges  {" "}
+                      Researching load balancing in IoT frameworks and cloud computing @ {" "}
                         <a
                           target="_blank"
-                          href="https://linkedin.com/company/codepath"
+                          href="https://linkedin.com/company/jiit"
                           className="company-link"
-                        >
+                        > JIIT Noida
                           {" "}
-                          CodePath{" "}
                         </a> 
                       </li> 
                     </ul>
