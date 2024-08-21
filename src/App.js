@@ -93,7 +93,7 @@ function App() {
 
                   <div className="resume-download">
                     <a
-                      href="files/Resume_Anjali_Chaturvedi_Summer.pdf"
+                      href="files/Resume_Anjali_Chaturvedi_2024.pdf"
                       download="Resume_Anjali_Chaturvedi.pdf"
                     >
                       Download Resume →
@@ -106,15 +106,25 @@ function App() {
                       <h2>Recently</h2>
                     </div>
                     <ul className="recently-list">
+                    <li> 
+                      Interning as a Python Developer @ {" "}
+                        <a
+                          target="_blank"
+                          href="https://www.newstok.ai"
+                          className="company-link"
+                        >
+                           NewsTok AI
+                        </a>{" "} to enhance the efficiency and accuracy of news aggregation
+                      </li>
                       <li> 
-                      Working as a Growth Associate @ {" "}
+                      Worked in Growth @ {" "}
                         <a
                           target="_blank"
                           href="https://www.linkedin.com/company/skillarena"
                           className="company-link"
                         >
                            Skillarena
-                        </a>{" "} where I focus on boosting the platform's visibility and helping it grow.
+                        </a>{" "} where I focused on boosting the platform's visibility and helping it grow.
                       </li>  {/* Recently Section 
                       <li>
                       Implementing innovative strategies to captivate audiences and broaden reach for {" "}
@@ -128,7 +138,7 @@ function App() {
                         </a> as their Summer Associate
                       </li> */}
                       <li>
-                      Started a Community Newsletter @ {" "}
+                      Organizing Hack Brew @ {" "}
                         <a
                           target="_blank"
                           href="https://linkedin.com/company/nodebrew"
@@ -136,7 +146,7 @@ function App() {
                         >
                           {" "}
                           Nodebrew{" "}
-                        </a> to help engage and connect our community members
+                        </a> to foster inclusivity in the tech industry
                       </li> 
                       <li>
                       Researching load balancing in IoT frameworks and cloud computing @ {" "}
