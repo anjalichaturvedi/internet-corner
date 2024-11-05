@@ -107,38 +107,17 @@ function App() {
                     </div>
                     <ul className="recently-list">
                     <li> 
-                      Interning as a Python Developer @ {" "}
+                      Working on the Rubric team @ {" "}
                         <a
                           target="_blank"
-                          href="https://www.newstok.ai"
+                          href="https://www.intervue.io"
                           className="company-link"
                         >
-                           NewsTok AI
-                        </a>{" "} to enhance the efficiency and accuracy of news aggregation
+                           Intervue
+                        </a>{" "} to make hiring easier and smarter in tech
                       </li>
-                      <li> 
-                      Worked in Growth @ {" "}
-                        <a
-                          target="_blank"
-                          href="https://www.linkedin.com/company/skillarena"
-                          className="company-link"
-                        >
-                           Skillarena
-                        </a>{" "} where I focused on boosting the platform's visibility and helping it grow.
-                      </li>  {/* Recently Section 
                       <li>
-                      Implementing innovative strategies to captivate audiences and broaden reach for {" "}
-                        <a
-                          target="_blank"
-                          href="https://linkedin.com/company/skillarena"
-                          className="company-link"
-                        >
-                          {" "}
-                          Skillarena{" "}
-                        </a> as their Summer Associate
-                      </li> */}
-                      <li>
-                      Organizing Hack Brew @ {" "}
+                      Organizing Hack Brew 2025 @ {" "}
                         <a
                           target="_blank"
                           href="https://linkedin.com/company/nodebrew"
@@ -147,16 +126,6 @@ function App() {
                           {" "}
                           Nodebrew{" "}
                         </a> to foster inclusivity in the tech industry
-                      </li> 
-                      <li>
-                      Researching load balancing in IoT frameworks and cloud computing @ {" "}
-                        <a
-                          target="_blank"
-                          href="https://linkedin.com/company/jiit"
-                          className="company-link"
-                        > JIIT Noida
-                          {" "}
-                        </a> 
                       </li> 
                     </ul>
                   </div>
@@ -177,6 +146,21 @@ function App() {
                       <p className="project-year">2024</p>
                       <a
                         href="https://github.com/anjalichaturvedi/anjalichaturvedi.github.io"
+                        className="view-project-link"
+                      >
+                        View Source Code →
+                      </a>
+                    </div>
+                    <div className="project-item">
+                      <h3>
+                      Fragmentation Visualizer
+                        <span className="project-tag">Project</span>
+                      </h3>
+                      <p>
+                      A demonstration of how IP Packets are fragmented and and how they are again reassembled in the network using Python.                      </p>
+                      <p className="project-year">2024</p>
+                      <a
+                        href="https://github.com/anjalichaturvedi/fragmentation-visualizer"
                         className="view-project-link"
                       >
                         View Source Code →
