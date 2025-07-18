@@ -1,43 +1,32 @@
-/* src/App.css --- The Correct and Final Layout Styles */
+/* In your Global.css file */
 
-/* 1. The top-level container for the entire application */
+/* ==========================================================================
+   2. MAIN APP LAYOUT (Definitive Version)
+   ========================================================================== */
+
 .portfolio-container {
-  display: flex;
-  flex-direction: column; /* Stacks Navbar on top of the app-body */
-  
-  /* THIS IS KEY: Lock the container to the full height of the viewport */
-  height: 115vh; 
-  
-  /* THIS IS KEY: Prevent this container itself from ever getting a scrollbar */
-  overflow: hidden; 
-  
+  display: grid;
+  /* This rule looks for the 3 direct children in App.js and arranges them */
+  grid-template-rows: auto 1fr auto;
+  height: 100vh;
+  overflow: hidden;
   background-color: #000;
 }
 
-/* 2. The container that holds the two columns (Sidebar and Main Content) */
 .app-body {
   display: grid;
-  /* Defines the two columns: 350px for sidebar, 1fr for the rest */
-  grid-template-columns: 350px 1fr; 
-  
-  /* THIS IS KEY: Make this container fill all remaining vertical space */
-  flex-grow: 1; 
-  
-  /* THIS IS KEY: Also prevent this container from scrolling */
-  overflow: hidden; 
+  grid-template-columns: 350px 1fr;
+  overflow: hidden;
 }
 
-/* 3. The main content area on the right */
 .main-content {
-  /* THIS IS THE MOST IMPORTANT PART: */
-  /* Allow ONLY this container to scroll vertically if its content is too long */
-  overflow-y: auto; 
-  
-  background: linear-gradient(#222, #121212);
+  overflow-y: auto;
+  padding-bottom: 90px;
+
 }
 
-/* 4. Ensure the sidebar can also scroll independently if its content gets long */
-/* The class name here should match the root element in your Sidebar.js file */
 .sidebar-container {
   overflow-y: auto;
+  padding-bottom: 95px;
+
 }

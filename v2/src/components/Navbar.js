@@ -13,7 +13,7 @@ import './Global.css';
 const Navbar = () => {
   return (
     <nav className="navbar-container">
-      {/* Left Section: Navigation Arrows */}
+      {/* Navigation Arrows */}
       <div className="navbar-section left">
         <button className="nav-arrow-btn">
           <FaChevronLeft />
@@ -23,7 +23,7 @@ const Navbar = () => {
         </button>
       </div>
 
-      {/* Center Section: Home Button and Search Bar */}
+      {/* Home Button and Search Bar */}
       <div className="navbar-section center">
         <button className="home-btn">
           <FaHome />
@@ -38,7 +38,7 @@ const Navbar = () => {
         </div>
       </div>
 
-      {/* Right Section: Social Links */}
+      {/* Social Links */}
       <div className="navbar-section right">
         <a href="https://github.com/YOUR_GITHUB" target="_blank" rel="noopener noreferrer" className="social-link-btn">
           <FaGithub />

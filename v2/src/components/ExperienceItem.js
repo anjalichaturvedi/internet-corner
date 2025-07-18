@@ -6,7 +6,7 @@ const ExperienceItem = ({ job, isExpanded, onToggleDetails }) => {
   const { logo, jobTitle, companyName, dates, details } = job;
 
   const handlePlayClick = (e) => {
-    e.stopPropagation(); // Prevents any parent onClick handlers from firing
+    e.stopPropagation();
     onToggleDetails();
   };
 
@@ -18,13 +18,11 @@ const ExperienceItem = ({ job, isExpanded, onToggleDetails }) => {
           <h4>{jobTitle}</h4>
           <p>{companyName} &bull; {dates}</p>
         </div>
-        {/* The Play button appears on hover */}
         <button className="play-button" onClick={handlePlayClick}>
           <FaPlay />
         </button>
       </div>
 
-      {/* The full details section that expands/collapses */}
       <div className="experience-full-details">
         <ul>
           {details.map((point, index) => (
