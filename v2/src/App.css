@@ -1,0 +1,15 @@
+a {
+  transition: color 0.2s ease-in-out;
+}
+
+input:focus {
+  outline: none;
+}
+
+div.bg-gray-800:hover {
+  background-color: #3a3a3a;
+}
+
+::placeholder {
+  color: #999;
+}
