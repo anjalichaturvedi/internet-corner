@@ -1,4 +1,5 @@
 import React from 'react';
+import { Link } from 'react-router-dom';
 import {
   FaChevronLeft,
   FaChevronRight,
@@ -8,12 +9,10 @@ import {
   FaGithub,
   FaLinkedin
 } from 'react-icons/fa';
-import './Global.css';
 
 const Navbar = () => {
   return (
     <nav className="navbar-container">
-      {/* Navigation Arrows */}
       <div className="navbar-section left">
         <button className="nav-arrow-btn">
           <FaChevronLeft />
@@ -23,11 +22,10 @@ const Navbar = () => {
         </button>
       </div>
 
-      {/* Home Button and Search Bar */}
       <div className="navbar-section center">
-        <button className="home-btn">
+        <Link to="/" className="home-btn">
           <FaHome />
-        </button>
+        </Link>
         <div className="search-bar-container">
           <FaSearch className="search-icon" />
           <input
@@ -35,11 +33,14 @@ const Navbar = () => {
             placeholder="What do you want to play?"
             className="search-input"
           />
+          <FaLock className="lock-icon" />
         </div>
       </div>
 
-      {/* Social Links */}
       <div className="navbar-section right">
+        <Link to="/blog" className="nav-action-link">
+          Blog
+        </Link>
         <a href="https://github.com/YOUR_GITHUB" target="_blank" rel="noopener noreferrer" className="social-link-btn">
           <FaGithub />
         </a>

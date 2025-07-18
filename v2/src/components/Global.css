@@ -99,6 +99,20 @@ body {
 }
 .social-link-btn:hover { color: var(--text-primary); }
 
+.nav-action-link {
+  background-color: var(--bg-elevated-highlight);
+  color: var(--text-primary);
+  text-decoration: none;
+  padding: 8px 16px;
+  border-radius: 50px;
+  font-weight: 600;
+  font-size: 14px;
+  transition: background-color 0.2s;
+}
+
+.nav-action-link:hover {
+  background-color: #404040;
+}
 
 /* ==========================================================================
    4. COMPONENT: SIDEBAR
@@ -123,7 +137,7 @@ body {
 .info-box p { font-size: 14px; line-height: 1.5; margin: 0; }
 
 .action-button {
-  background-color: var(--text-primary); color: var(--bg-primary); border: none;
+  background-color: var(--brand-green); color: var(--bg-primary); border: none;
   border-radius: 50px; padding: 10px 24px; font-weight: 700; font-size: 14px;
   cursor: pointer; align-self: flex-start; transition: transform 0.2s;
 }
@@ -148,6 +162,32 @@ body {
 .lang-button:hover { border-color: var(--text-primary); transform: scale(1.05); }
 .lang-button svg { font-size: 18px; }
 
+.colophon-list {
+  list-style: none;
+  padding: 0;
+   margin: 0;
+  font-size: 13px;
+  color: var(--text-subdued);
+}
+
+.colophon-list li {
+  display: flex;
+  align-items: center;
+  gap: 10px; 
+  margin-bottom: 12px;
+}
+
+.colophon-list li svg {
+  font-size: 16px;
+  flex-shrink: 0;
+  width: 20px; 
+}
+
+.colophon-list li strong {
+  color: var(--text-secondary);
+  font-weight: 600;
+  margin-left: -6px;
+}
 
 /* ==========================================================================
    5. GENERAL SECTION STYLES
@@ -182,7 +222,7 @@ body {
 .projects-grid {
   display: grid; grid-auto-flow: column; grid-auto-columns: 210px; gap: 24px;
   overflow-x: auto; padding-bottom: 20px;
-  scrollbar-width: thin; scrollbar-color: #6a5acd transparent;
+  scrollbar-width: thin; scrollbar-color: #8c8c8c transparent;
 }
 .projects-grid::-webkit-scrollbar { height: 12px; }
 .projects-grid::-webkit-scrollbar-track { background-color: rgba(0, 0, 0, 0.2); border-radius: 10px; }
@@ -201,7 +241,7 @@ body {
   position: relative; overflow: hidden;
 }
 .card-art h3 { font-size: 24px; font-weight: 700; margin: 0; line-height: 1.2; }
-.card-art .card-art-subtitle {padding-top: 10px; font-weight: 400; margin: 0; font-size: 14px; }
+.card-art .card-art-subtitle {padding-top: 10px; font-weight: 400; margin: 0; font-size: 12px; }
 
 .action-buttons {
   position: absolute; bottom: 12px; right: 12px; display: flex; gap: 10px;
@@ -311,4 +351,88 @@ body {
   justify-content: flex-end;
   align-items: center;
   gap: 16px;
+}
+
+/* In your Global.css file */
+
+/* ==========================================================================
+   9. COMPONENT: BLOG PAGE
+   ========================================================================== */
+
+.blog-page-layout {
+  display: grid;
+  grid-template-columns: 300px 1fr; /* Sidebar and main content */
+  height: 100%;
+  overflow: hidden;
+}
+
+.blog-sidebar {
+  border-right: 1px solid var(--bg-elevated-highlight);
+  padding: 24px;
+  overflow-y: auto;
+}
+
+.blog-sidebar h3 {
+  font-size: 16px;
+  text-transform: uppercase;
+  color: var(--text-secondary);
+  letter-spacing: 1px;
+  margin: 0 0 20px 0;
+}
+
+.blog-post-list {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.blog-post-list button {
+  background: none;
+  border: none;
+  width: 100%;
+  text-align: left;
+  padding: 12px;
+  border-radius: 6px;
+  cursor: pointer;
+  color: var(--text-secondary);
+  transition: background-color 0.2s;
+}
+.blog-post-list button:hover {
+  background-color: var(--bg-elevated-highlight);
+}
+.blog-post-list button.active {
+  background-color: var(--bg-elevated-highlight);
+  color: var(--text-primary);
+}
+
+.blog-post-list .post-title {
+  font-weight: 600;
+  display: block;
+}
+.blog-post-list .post-date {
+  font-size: 12px;
+  opacity: 0.7;
+}
+
+.blog-post-content {
+  padding: 40px;
+  overflow-y: auto;
+}
+.blog-post-content h1 {
+  font-size: 42px;
+  color: var(--text-primary);
+  margin: 0 0 10px 0;
+}
+.blog-post-content .post-meta {
+  color: var(--text-secondary);
+  margin-bottom: 40px;
+}
+.blog-post-content .post-body p {
+  font-size: 16px;
+  line-height: 1.8;
+  color: var(--text-secondary);
+  margin-bottom: 20px;
 }

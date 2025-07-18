@@ -1,27 +1,39 @@
+// src/App.js
+
 import React from 'react';
-import Sidebar from './components/Sidebar';
+import { BrowserRouter, Routes, Route, Outlet, Link } from 'react-router-dom';
+
+// Import Pages
+import PortfolioPage from './pages/PortfolioPage';
+import BlogPage from './pages/BlogPage';
+
+// Import Shared Components
 import Navbar from './components/Navbar';
-import FeaturedWork from './components/FeaturedWork';
-import WorkExperience from './components/WorkExperience';
-import Education from './components/Education';
 import FooterPlayer from './components/FooterPlayer';
+
+// Import your global stylesheet
 import './App.css'; 
 
-function App() {
+// This component includes the shared layout (Navbar, Footer)
+const AppLayout = () => {
   return (
     <div className="portfolio-container">
       <Navbar />
-
-      <div className="app-body">
-        <Sidebar />
-        <main className="main-content">
-          <FeaturedWork />
-          <WorkExperience />
-          <Education />
-        </main>
-      </div>
-      <FooterPlayer />
+      <Outlet />
     </div>
+  );
+}
+
+function App() {
+  return (
+    <BrowserRouter>
+      <Routes>
+        <Route path="/" element={<AppLayout />}>
+          <Route index element={<PortfolioPage />} />
+          <Route path="blog" element={<BlogPage />} />
+        </Route>
+      </Routes>
+    </BrowserRouter>
   );
 }
 

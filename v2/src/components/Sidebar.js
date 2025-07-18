@@ -1,6 +1,5 @@
 import React from 'react';
 import './Global.css';
-import { FiPlus } from 'react-icons/fi';
 import { TbWorld } from 'react-icons/tb';
 import { 
   DiReact, 
@@ -10,6 +9,8 @@ import {
   DiCss3, 
   DiGit 
 } from 'react-icons/di';
+import { FiPlus, FiFigma, FiType } from 'react-icons/fi';
+import { IoTriangleOutline } from 'react-icons/io5';
 
 const Sidebar = () => {
   return (
@@ -24,13 +25,21 @@ const Sidebar = () => {
 
       {/* --- About Me Box --- */}
       <div className="info-box about-me">
-        <h3>Anjali Chaturvedi</h3>
+        <h3>Hi, I am Anjali Chaturvedi</h3>
         <p>
-          I'm a passionate full-stack developer with a love for creating clean, 
-          intuitive, and performant user interfaces. Let's build something amazing together.
+          I am a frontend + product enthusiast. I love building products that make life easier and are user-first. 
+          <br /> <br/> Currently, doing everything and anything at <a 
+            href="https://www.nodebrew.org" 
+            style={{ 
+                color: 'inherit', 
+                textDecoration: 'underline' 
+            }}
+        >
+            Nodebrew
+        </a>.
         </p>
-        <button className="action-button">
-          Get In Touch
+        <button href="mailto:anjaliichaturvedi@gmail.com" className="action-button">
+          Say "Hello"
         </button>
       </div>
 
@@ -49,18 +58,17 @@ const Sidebar = () => {
 
       {/* --- Footer Links --- */}
       <div className="sidebar-footer">
-        <a href="#">Legal</a>
-        <a href="#">Safety & Privacy Center</a>
-        <a href="#">Privacy Policy</a>
-        <a href="#">Cookies</a>
-        <a href="#">About Ads</a>
-        <a href="#">Accessibility</a>
+        <ul className="colophon-list">
+          <li><FiFigma /> Designed in <strong>Figma</strong></li>
+          <li><DiReact /> Built with <strong>React & CSS Grid</strong></li>
+          <li><FiType /> Typography in <strong>Inter</strong></li>
+          <li><IoTriangleOutline /> Hosted on <strong>Vercel</strong></li>
+        </ul>
       </div>
 
       {/* --- Language Button --- */}
       <button className="lang-button">
-        <TbWorld />
-        <span>English</span>
+        <span>📍 New Delhi, India</span>
       </button>
     </aside>
   );

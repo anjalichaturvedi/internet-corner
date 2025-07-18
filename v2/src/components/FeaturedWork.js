@@ -5,23 +5,48 @@ import './Global.css';
 const projectData = [
   {
     id: 1,
-    title: "E-commerce Platform",
-    subtitle: "React & Node.js",
-    description: "Full-stack retail platform built for scale.",
+    title: "Internet Corner",
+    subtitle: "ReactJS, Tailwind CSS, Figma",
+    description: "A little home on the web.",
     color: "#602894",
     liveUrl: "#",
-    githubUrl: "#",
-    rationale: "To master full-stack development and understand the complexities of state management, authentication, and payment gateway integration in a real-world application." // <-- Add the 'why'
+    githubUrl: "https://github.com/anjalichaturvedi/internet-corner",
   },
   {
     id: 2,
-    title: "Data Dashboard",
-    subtitle: "Python & D3.js",
-    description: "Interactive visualizations for business intelligence.",
+    title: "Campus Navigator",
+    subtitle: "OpenStreetMap, Leaflet Routing, JS",
+    description: "An open-source navigator made for JIIT with multi-routes.",
     color: "#B42838",
     liveUrl: "#",
-    githubUrl: "#",
-    rationale: "I was fascinated by data storytelling and wanted to build a tool that could turn raw numbers into clear, actionable insights for decision-makers."
+    githubUrl: "https://github.com/anjalichaturvedi/campus-navigator",
+  },
+  {
+    id: 3,
+    title: "Comparly",
+    subtitle: "Python, Requests, BeautifulSoup",
+    description: "Compare your carts while shopping to find the cheapest.",
+    color: "#2870b4ff",
+    liveUrl: "#",
+    githubUrl: "https://github.com/anjalichaturvedi/comparely",
+  },
+  {
+    id: 4,
+    title: "Recommerz",
+    subtitle: "Python, Clustering, KNN-Model",
+    description: "Predicts what will you buy next based on your shopping cart.",
+    color: "#b46728ff",
+    liveUrl: "#",
+    githubUrl: "https://github.com/anjalichaturvedi/comparely",
+  },
+  {
+    id: 5,
+    title: "Ordrly",
+    subtitle: "Java, Swing",
+    description: "A desktop tool to organize files and folders.",
+    color: "#b42865ff",
+    liveUrl: "#",
+    githubUrl: "https://github.com/anjalichaturvedi/ordrly",
   },
 ];
 
