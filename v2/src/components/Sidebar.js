@@ -1,5 +1,3 @@
-// src/components/Sidebar.js
-
 import React from 'react';
 import './Global.css';
 import { FiPlus } from 'react-icons/fi';

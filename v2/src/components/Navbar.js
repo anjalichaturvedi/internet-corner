@@ -1,4 +1,3 @@
-// src/components/Navbar.js
 import React from 'react';
 import {
   FaChevronLeft,
@@ -36,7 +35,6 @@ const Navbar = () => {
             placeholder="What do you want to play?"
             className="search-input"
           />
-          <FaLock className="lock-icon" />
         </div>
       </div>
 

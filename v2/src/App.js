@@ -1,15 +1,29 @@
 // src/App.js
+
 import React from 'react';
-import Navbar from './components/Navbar';
 import Sidebar from './components/Sidebar';
-import './App.css'; // Your global styles
+import Navbar from './components/Navbar';
+import FeaturedWork from './components/FeaturedWork';
+import WorkExperience from './components/WorkExperience';
+import Education from './components/Education';
+import './App.css'; 
 
 function App() {
   return (
-    <div className="App">
+    <div className="portfolio-container">
+      {/* 1. The Navbar is now at the top of everything */}
       <Navbar />
-      <Sidebar />
-      {/* The rest of your portfolio content can go here */}
+
+      {/* 2. This new div wraps our two-column layout */}
+      <div className="app-body">
+        <Sidebar />
+        <main className="main-content">
+          <FeaturedWork />
+          <WorkExperience />
+          <Education />
+          {/* Other sections... */}
+        </main>
+      </div>
     </div>
   );
 }
