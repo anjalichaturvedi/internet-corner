@@ -1,55 +1,7 @@
 import React, { useState } from 'react';
-import ProjectCard from './FeaturedCard';
-import '../Global.css';
+import ProjectCard from './ProjectCard';
 import { Link } from 'react-router-dom';
-
-const projectData = [
-  {
-    id: 1,
-    title: "Internet Corner",
-    subtitle: "ReactJS, Tailwind CSS, Figma",
-    description: "A little home on the web.",
-    color: "#602894",
-    liveUrl: "#",
-    githubUrl: "https://github.com/anjalichaturvedi/internet-corner",
-  },
-  {
-    id: 2,
-    title: "Campus Navigator",
-    subtitle: "OpenStreetMap, Leaflet Routing, JS",
-    description: "An open-source navigator made for JIIT with multi-routes.",
-    color: "#B42838",
-    liveUrl: "#",
-    githubUrl: "https://github.com/anjalichaturvedi/campus-navigator",
-  },
-  {
-    id: 3,
-    title: "Comparly",
-    subtitle: "Python, Requests, BeautifulSoup",
-    description: "Compare your carts while shopping to find the cheapest.",
-    color: "#2870b4ff",
-    liveUrl: "#",
-    githubUrl: "https://github.com/anjalichaturvedi/comparely",
-  },
-  {
-    id: 4,
-    title: "Recommerz",
-    subtitle: "Python, Random Forest, KMeans, Cosine Similarity",
-    description: "Predicts what will you buy next based on your shopping cart.",
-    color: "#b46728ff",
-    liveUrl: "#",
-    githubUrl: "https://github.com/anjalichaturvedi/comparely",
-  },
-  {
-    id: 5,
-    title: "Ordrly",
-    subtitle: "Java, Swing",
-    description: "A desktop tool to organize files and folders.",
-    color: "#b42865ff",
-    liveUrl: "#",
-    githubUrl: "https://github.com/anjalichaturvedi/ordrly",
-  },
-];
+import { allProjectsData } from '../data/projects.js';
 
 const FeaturedWork = () => {
   const [expandedId, setExpandedId] = useState(null);
@@ -58,6 +10,8 @@ const FeaturedWork = () => {
     setExpandedId(expandedId === id ? null : id);
   };
 
+  const featuredProjects = allProjectsData.slice(0, 5);
+
   return (
     <section className="featured-work-section">
       <div className="section-header">
@@ -65,7 +19,7 @@ const FeaturedWork = () => {
         <Link to="/projects" className="show-all-link">Show all</Link>
       </div>
       <div className="projects-grid">
-        {projectData.map((project) => (
+        {featuredProjects.map((project) => (
           <ProjectCard
             key={project.id}
             project={project}
