@@ -1,5 +1,5 @@
 import React from 'react';
-import './Global.css';
+import '../Global.css';
 import { TbWorld } from 'react-icons/tb';
 import { 
   DiReact, 
@@ -11,6 +11,10 @@ import {
 } from 'react-icons/di';
 import { FiPlus, FiFigma, FiType } from 'react-icons/fi';
 import { IoTriangleOutline } from 'react-icons/io5';
+import { FiCpu, FiClipboard, FiUsers, FiFileText, FiTrendingUp, FiTarget } from 'react-icons/fi';
+import { FaRegLightbulb } from 'react-icons/fa';
+import { DiPython } from 'react-icons/di';
+import { FiDatabase } from 'react-icons/fi';
 
 const Sidebar = () => {
   return (
@@ -38,23 +42,72 @@ const Sidebar = () => {
             Nodebrew
         </a>.
         </p>
-        <button href="mailto:anjaliichaturvedi@gmail.com" className="action-button">
+        <a href="mailto:anjaliichaturvedi@gmail.com" className="action-button">
           Say "Hello"
-        </button>
+        </a>
       </div>
 
       {/* --- Tools & Technologies Box --- */}
-      <div className="info-box tools">
-        <h3>Tools & Technologies</h3>
-        <div className="tools-grid">
-          <DiJsBadge title="JavaScript" />
-          <DiReact title="React" />
-          <DiNodejsSmall title="Node.js" />
-          <DiHtml5 title="HTML5" />
-          <DiCss3 title="CSS3" />
-          <DiGit title="Git" />
-        </div>
-      </div>
+<div className="info-box tools">
+  <h3>Skills & Technologies</h3>
+
+  <div className="tools-grid">
+    <div className="tool-icon-wrapper">
+      <DiReact />
+      <span className="tooltip">React</span>
+    </div>
+    <div className="tool-icon-wrapper">
+      <DiJsBadge />
+      <span className="tooltip">JavaScript</span>
+    </div>
+    <div className="tool-icon-wrapper">
+      <DiHtml5 />
+      <span className="tooltip">HTML5</span>
+    </div>
+    <div className="tool-icon-wrapper">
+      <DiCss3 />
+      <span className="tooltip">CSS3</span>
+    </div>
+  </div>
+
+  <div className="tools-grid">
+    <div className="tool-icon-wrapper">
+      <DiPython />
+      <span className="tooltip">Python</span>
+    </div>
+    <div className="tool-icon-wrapper">
+      <FiDatabase />
+      <span className="tooltip">SQL</span>
+    </div>
+    <div className="tool-icon-wrapper">
+      <FiCpu />
+      <span className="tooltip">Scikit-learn</span>
+    </div>
+    <div className="tool-icon-wrapper">
+      <FiClipboard />
+      <span className="tooltip">Pandas</span>
+    </div>
+  </div>
+
+  <div className="tools-grid">
+    <div className="tool-icon-wrapper">
+      <FiUsers />
+      <span className="tooltip">User Research</span>
+    </div>
+    <div className="tool-icon-wrapper">
+      <FiFileText />
+      <span className="tooltip">PRD Authoring</span>
+    </div>
+    <div className="tool-icon-wrapper">
+      <FiTrendingUp />
+      <span className="tooltip">Data Analytics</span>
+    </div>
+    <div className="tool-icon-wrapper">
+      <FiTarget />
+      <span className="tooltip">GTM Strategy</span>
+    </div>
+  </div>
+</div>
 
       {/* --- Footer Links --- */}
       <div className="sidebar-footer">

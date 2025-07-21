@@ -1,6 +1,6 @@
 import React from 'react';
 import { FaPlay } from 'react-icons/fa';
-import './Global.css';
+import '../Global.css';
 
 const ExperienceItem = ({ job, isExpanded, onToggleDetails }) => {
   const { logo, jobTitle, companyName, dates, details } = job;

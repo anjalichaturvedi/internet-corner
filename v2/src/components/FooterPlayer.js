@@ -1,11 +1,9 @@
-// src/components/FooterPlayer.js
-
 import React from 'react';
 import { 
   FaPlay, FaStepBackward, FaStepForward, FaRandom, FaRedo, 
   FaGithub, FaLinkedin, FaFileAlt 
 } from 'react-icons/fa';
-import './Global.css'; // Assuming you are using the global CSS
+import '../Global.css';
 
 const FooterPlayer = () => {
   return (
@@ -19,7 +17,7 @@ const FooterPlayer = () => {
         />
         <div className="status-info">
           <h4>Open to Opportunities</h4>
-          <p>Anjali Chaturvedi • Frontend & PM</p>
+          <p>Anjali Chaturvedi • Tech & PM</p>
         </div>
       </div>
 
@@ -28,7 +26,7 @@ const FooterPlayer = () => {
         <div className="player-controls-top">
           <button className="control-btn-small"><FaRandom /></button>
           <button className="control-btn-small"><FaStepBackward /></button>
-          <a href="mailto:your-email@example.com" className="control-btn-large play">
+          <a href="mailto:anjaliichaturvedi@gmail.com" className="control-btn-large play">
             <FaPlay />
           </a>
           <button className="control-btn-small"><FaStepForward /></button>
@@ -43,8 +41,8 @@ const FooterPlayer = () => {
 
       {/* Right Section: Social & Resume Links */}
       <div className="player-right">
-        <a href="https://github.com/YOUR_GITHUB" target="_blank" rel="noopener noreferrer" className="control-btn-small"><FaGithub /></a>
-        <a href="https://linkedin.com/in/YOUR_LINKEDIN" target="_blank" rel="noopener noreferrer" className="control-btn-small"><FaLinkedin /></a>
+        <a href="https://github.com/anjalichaturvedi" target="_blank" rel="noopener noreferrer" className="control-btn-small"><FaGithub /></a>
+        <a href="https://linkedin.com/in/anjali-chaturvedi" target="_blank" rel="noopener noreferrer" className="control-btn-small"><FaLinkedin /></a>
         <a href="YOUR_RESUME.pdf" target="_blank" rel="noopener noreferrer" className="control-btn-small"><FaFileAlt /></a>
       </div>
     </footer>

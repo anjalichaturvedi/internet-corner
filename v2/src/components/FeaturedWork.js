@@ -1,6 +1,7 @@
 import React, { useState } from 'react';
-import ProjectCard from './ProjectCard';
-import './Global.css';
+import ProjectCard from './FeaturedCard';
+import '../Global.css';
+import { Link } from 'react-router-dom';
 
 const projectData = [
   {
@@ -33,7 +34,7 @@ const projectData = [
   {
     id: 4,
     title: "Recommerz",
-    subtitle: "Python, Clustering, KNN-Model",
+    subtitle: "Python, Random Forest, KMeans, Cosine Similarity",
     description: "Predicts what will you buy next based on your shopping cart.",
     color: "#b46728ff",
     liveUrl: "#",
@@ -61,7 +62,7 @@ const FeaturedWork = () => {
     <section className="featured-work-section">
       <div className="section-header">
         <h2>Featured Work</h2>
-        <a href="#" className="show-all-link">Show all</a>
+        <Link to="/projects" className="show-all-link">Show all</Link>
       </div>
       <div className="projects-grid">
         {projectData.map((project) => (

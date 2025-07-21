@@ -1,6 +1,6 @@
 import React from 'react';
 import ExperienceItem from './ExperienceItem';
-import './Global.css';
+import '../Global.css';
 
 const educationData = [
   {
