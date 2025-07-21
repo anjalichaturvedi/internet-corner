@@ -35,7 +35,7 @@ const Navbar = () => {
           <FaSearch className="search-icon" />
           <input
             type="text"
-            placeholder="Search projects..."
+            placeholder="What do you want to search?"
             className="search-input"
             value={query}
             onChange={(e) => setQuery(e.target.value)}
