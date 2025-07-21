@@ -16,7 +16,7 @@ const AppLayout = () => {
         <h2>Desktop Experience Recommended</h2>
         <p>This portfolio is designed to be viewed on a larger screen. Please switch to a desktop for the full interactive experience!</p>
         <a 
-          href="https://github.com/anjalichaturvedi" 
+          href="https://github.com/anjalichaturvedi/internet-corner" 
           target="_blank" 
           rel="noopener noreferrer" 
           className="action-button"
