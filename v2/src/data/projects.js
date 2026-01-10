@@ -1,5 +1,25 @@
 export const allProjectsData = [
   {
+  id: -1,
+  title: "Automate",
+  subtitle: "LangChain, OpenAI, AWS IoT, NodeJS, WebSockets",
+  description: "AI tool to predict automotive service workflows.",
+  rationale: "Built to shift automotive servicing from reactive breakdowns to prediction-led, feedback-driven maintenance across vehicles, service centers, and OEMs.",
+  background: "linear-gradient(135deg, #0f172a, #020617)",
+  liveUrl: "https://github.com/anjalichaturvedi/automate",
+  githubUrl: "https://github.com/anjalichaturvedi/automate",
+  }, 
+  {
+  id: 0,
+  title: "AIRA",
+  subtitle: "LangChain, Python, FastAPI, Vite, TensorFlow",
+  description: "AI health assistant that helps users understand respiratory conditions from audio recordings.",
+  rationale: "Built to reduce confusion and anxiety around respiratory symptoms by turning complex medical audio analysis into a clear, guided user experience.",
+  background: "linear-gradient(135deg, #1f2933, #111827)",
+  liveUrl: "https://github.com/anjalichaturvedi/aira",
+  githubUrl: "https://github.com/anjalichaturvedi/aira",
+  },
+  {
     id: 1,
     title: "Internet Corner",
     subtitle: "React, Chakra UI",

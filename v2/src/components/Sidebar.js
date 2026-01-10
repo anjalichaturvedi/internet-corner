@@ -29,23 +29,30 @@ const Sidebar = () => {
 
       {/* --- About Me Box --- */}
       <div className="info-box about-me">
-        <h3>Hi, I am Anjali Chaturvedi</h3>
+        <h3>Hi, I’m Anjali Chaturvedi</h3>
         <p>
-          I am a frontend + product enthusiast. I love building products that make life easier and are user-first. 
-          <br /> <br/> Currently, doing everything and anything at <a 
-            href="https://www.nodebrew.org" 
-            style={{ 
-                color: 'inherit', 
-                textDecoration: 'underline' 
+          I’m a product-focused builder with a strong engineering base. I like working
+          at the intersection of user problems, data, and execution.
+          <br /><br />
+          I’ve led zero-to-one initiatives, shipped user-facing products, and worked
+          closely with engineering and growth teams to turn ideas into outcomes.
+          <br /><br />
+          Currently building and scaling programs at{" "}
+          <a
+            href="https://www.nodebrew.org"
+            style={{
+              color: "inherit",
+              textDecoration: "underline",
             }}
-        >
+          >
             Nodebrew
-        </a>.
+          </a>.
         </p>
         <a href="mailto:anjaliichaturvedi@gmail.com" className="action-button">
           Say "Hello"
         </a>
-      </div>
+    </div>
+
 
       {/* --- Tools & Technologies Box --- */}
 <div className="info-box tools">

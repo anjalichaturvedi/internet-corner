@@ -17,7 +17,7 @@ const FooterPlayer = () => {
         />
         <div className="status-info">
           <h4>Open to Opportunities</h4>
-          <p>Anjali Chaturvedi • Tech & PM</p>
+          <p>Anjali Chaturvedi • Product | Frontend </p>
         </div>
       </div>
 
