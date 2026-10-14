@@ -1,0 +1,560 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<meta name="theme-color" content="#e8e2d7">
+<meta name="robots" content="index,follow">
+<meta name="theme-color" content="#e9e4da">
+<meta name="description" content="A corner on the internet, with all things product.">
+<title>Anjali Chaturvedi</title>
+<link rel="icon" type="image/x-icon" href="favicon.ico"><style>
+:root{--bg:#252421;--paper:#f8f5ec;--ink:#191917;--muted:#77736b;--line:#d4cec1;--accent:#ff5b35;--green:#386b52;--blue:#365e78;--shadow:0 28px 80px rgba(40,34,24,.13),0 3px 10px rgba(40,34,24,.08)}
+*{box-sizing:border-box}html{scroll-behavior:smooth;scroll-padding-top:90px}body{margin:0;color:var(--ink);background:var(--bg);font-family:Inter,ui-sans-serif,system-ui,-apple-system,BlinkMacSystemFont,"Segoe UI",sans-serif;-webkit-font-smoothing:antialiased}body:before{content:"";position:fixed;inset:0;pointer-events:none;z-index:0;opacity:.18;background-image:radial-gradient(#9b9488 .55px,transparent .55px);background-size:5px 5px}a{color:inherit}button{font:inherit}.mono{font-family:"SFMono-Regular",Consolas,"Liberation Mono",monospace;letter-spacing:.035em}.muted{color:var(--muted)}
+.progress{position:fixed;z-index:40;top:0;left:0;height:3px;width:0;background:var(--accent)}
+.topbar{position:fixed;z-index:30;top:15px;left:50%;transform:translateX(-50%);width:min(1100px,calc(100% - 28px));display:flex;align-items:center;justify-content:space-between;gap:12px;padding:9px 12px 9px 16px;border:1px solid rgba(25,25,23,.13);border-radius:999px;background:rgba(248,245,236,.88);backdrop-filter:blur(16px)}
+.brand{font-size:11px;font-weight:850;letter-spacing:.09em;text-transform:uppercase;text-decoration:none;white-space:nowrap}.brand i{font-style:normal;color:var(--accent)}.nav{display:flex;gap:3px;align-items:center}.nav a,.nav button{border:0;background:transparent;border-radius:999px;padding:8px 10px;font-size:11px;color:var(--muted);text-decoration:none;cursor:pointer}.nav a:hover,.nav button:hover{color:var(--ink);background:#ebe5d9}
+.hero{min-height:100svh;position:relative;z-index:1;display:grid;place-items:center;padding:105px 20px 75px;overflow:hidden}.hero-note{position:absolute;top:19%;left:max(24px,calc(50% - 480px));max-width:170px;font-size:10px;line-height:1.7;text-transform:uppercase;letter-spacing:.08em;color:var(--muted)}.hero-note b{display:block;color:var(--ink);margin-bottom:6px}.hero-side{position:absolute;right:max(24px,calc(50% - 480px));bottom:17%;writing-mode:vertical-rl;font-size:9px;letter-spacing:.16em;text-transform:uppercase;color:var(--muted)}
+.receipt-wrap{width:min(100%,330px);transform-origin:center;perspective:1000px}.receipt{position:relative;padding:27px 25px 24px;background:var(--paper);box-shadow:var(--shadow);border:1px solid rgba(25,25,23,.08);clip-path:polygon(0 0,100% 0,100% 98.5%,97% 100%,94% 98.5%,91% 100%,88% 98.5%,85% 100%,82% 98.5%,79% 100%,76% 98.5%,73% 100%,70% 98.5%,67% 100%,64% 98.5%,61% 100%,58% 98.5%,55% 100%,52% 98.5%,49% 100%,46% 98.5%,43% 100%,40% 98.5%,37% 100%,34% 98.5%,31% 100%,28% 98.5%,25% 100%,22% 98.5%,19% 100%,16% 98.5%,13% 100%,10% 98.5%,7% 100%,4% 98.5%,0 100%)}.receipt:before{content:"";position:absolute;inset:0;pointer-events:none;opacity:.1;background:repeating-linear-gradient(0deg,transparent 0 3px,rgba(0,0,0,.08) 3px 4px)}.receipt>*{position:relative}.receipt-head{text-align:center;padding-bottom:17px;border-bottom:1px dashed var(--line)}.receipt-mark{width:29px;height:29px;margin:0 auto 10px;border:1.5px solid var(--ink);border-radius:50%;display:grid;place-items:center;font-size:12px;font-weight:800}.receipt-head h1{margin:0;font-size:11px;letter-spacing:.1em}.receipt-head p{margin:6px 0 0;font-size:8px;letter-spacing:.12em;color:var(--muted)}.receipt-label{display:flex;justify-content:space-between;gap:8px;margin:17px 0 9px;font-size:8px;color:var(--muted);text-transform:uppercase}.items{display:grid}.item{width:100%;display:grid;grid-template-columns:22px 1fr auto;gap:7px;align-items:start;padding:10px 0;text-align:left;border:0;border-bottom:1px dashed var(--line);background:transparent;cursor:pointer;color:var(--ink);transition:padding .18s,color .18s}.item:hover,.item:focus-visible{color:var(--accent);padding-left:4px;outline:2px solid transparent}.item .num{color:var(--muted);font-size:9px;padding-top:2px}.item .name{font-size:10px;font-weight:700;line-height:1.4}.item .detail{display:block;font-size:8px;font-weight:400;color:var(--muted);margin-top:3px}.item .price{font-size:9px;white-space:nowrap}.total{display:flex;justify-content:space-between;gap:8px;padding:15px 0 13px}.total span{font-size:8px}.total strong{font-size:11px;text-align:right}.receipt-foot{text-align:center;border-top:1px dashed var(--line);padding-top:12px}.receipt-foot p{margin:0;font-size:8px;color:var(--muted)}.receipt-foot .scan{margin-top:8px;letter-spacing:.13em;color:var(--ink)}.scroll-hint{position:absolute;bottom:24px;left:50%;transform:translateX(-50%);display:flex;align-items:center;gap:9px;color:var(--muted);font-size:9px;letter-spacing:.1em;text-transform:uppercase;white-space:nowrap}.scroll-hint .arrow{display:grid;place-items:center;width:23px;height:23px;border:1px solid #c9c1b4;border-radius:50%;animation:bob 1.8s ease-in-out infinite}@keyframes bob{0%,100%{transform:translateY(0)}50%{transform:translateY(4px)}}
+.ticker{position:relative;z-index:1;overflow:hidden;border-block:1px solid rgba(25,25,23,.15);padding:12px 0;background:#ded8cc}.ticker-track{display:flex;gap:24px;width:max-content;animation:marquee 36s linear infinite;font-size:9px;letter-spacing:.12em;text-transform:uppercase;color:#625d55}.ticker-track span:after{content:"✳";margin-left:24px;color:var(--accent)}@keyframes marquee{to{transform:translateX(-50%)}}
+.wrap{max-width:1100px;margin:0 auto;padding:0 24px;position:relative;z-index:1}.intro{padding:100px 0 74px;display:grid;grid-template-columns:1.2fr .8fr;gap:40px;align-items:end}.eyebrow{font-size:9px;text-transform:uppercase;letter-spacing:.16em;color:var(--accent);margin-bottom:16px}.intro h2{font-size:clamp(32px, 4vw, 52px);letter-spacing:-.08em;line-height:.9;margin:0;font-weight:850}.intro h2 em{font-style:normal;color:var(--accent)}.intro-copy{font-size:15px;line-height:1.8;color:#615d55;max-width:450px}.intro-copy p{margin:0 0 14px}.text-link{display:inline-flex;align-items:center;gap:8px;font-size:11px;font-weight:750;text-decoration:none;border-bottom:1px solid var(--accent);padding-bottom:5px}
+.section{padding:72px 0 85px}.section-head{display:flex;align-items:end;justify-content:space-between;gap:24px;margin-bottom:30px}.section-head h2{margin:0;font-size:clamp(34px,5.6vw,62px);letter-spacing:-.07em;line-height:.95}.section-head p{max-width:280px;font-size:12px;color:var(--muted);line-height:1.7;margin:0}.section-head .eyebrow{margin-bottom:12px}
+.positioning{display:grid;grid-template-columns:repeat(3,1fr);gap:12px;margin:0 0 30px}.position-card{padding:19px;border:1px solid rgba(25,25,23,.16);background:rgba(248,245,236,.46);min-height:150px}.position-card .index{font-size:9px;color:var(--accent)}.position-card h3{font-size:18px;letter-spacing:-.04em;margin:18px 0 7px}.position-card p{font-size:12px;line-height:1.65;color:var(--muted);margin:0}
+.filters{display:flex;gap:7px;flex-wrap:wrap;margin:0 0 18px}.filter{border:1px solid #c9c1b4;border-radius:999px;background:transparent;padding:8px 12px;font-size:10px;color:#686259;cursor:pointer}.filter[aria-pressed=true]{background:var(--ink);color:var(--paper);border-color:var(--ink)}.case-grid{display:grid;gap:14px}.case-card{display:grid;grid-template-columns:1fr .9fr;gap:28px;padding:clamp(20px,3vw,32px);border:1px solid rgba(25,25,23,.16);background:rgba(248,245,236,.5);transition:background .2s,transform .2s}.case-card:hover{background:var(--paper);transform:translateY(-2px)}.case-card[hidden]{display:none}.case-meta{display:flex;gap:7px;flex-wrap:wrap;margin-bottom:17px}.tag{border:1px solid #d3ccbf;border-radius:99px;padding:5px 8px;font-size:8px;text-transform:uppercase;letter-spacing:.07em;color:#6b665d}.case-card h3{margin:0;font-size:clamp(26px,3.5vw,39px);letter-spacing:-.065em;line-height:1.02}.case-card .dek{margin:13px 0 0;color:#6a655d;font-size:13px;line-height:1.75}.case-card .roleline{margin-top:15px;font-size:10px;line-height:1.7;color:#77736b}.case-card .roleline b{color:var(--ink)}.evidence{background:var(--paper);border:1px dashed #c9c1b4;padding:22px;display:flex;flex-direction:column;justify-content:space-between;min-height:220px}.evidence-top{display:flex;justify-content:space-between;gap:10px;align-items:center;font-size:8px;color:var(--muted);text-transform:uppercase;letter-spacing:.09em}.evidence-metrics{display:grid;grid-template-columns:1fr 1fr;gap:15px;margin:25px 0}.metric{font-size:clamp(32px,4vw,49px);letter-spacing:-.08em;line-height:1;font-weight:800}.metric-label{font-size:10px;color:var(--muted);line-height:1.5;margin-top:7px}.evidence-bottom{border-top:1px dashed var(--line);padding-top:12px;display:flex;justify-content:space-between;gap:12px;font-size:9px;color:var(--muted)}.evidence-bottom b{color:var(--green);font-weight:750}.diagram{display:grid;gap:7px;margin-top:16px}.node{border:1px solid #d6cfc2;padding:9px 11px;background:#f2eee5;font-size:10px;font-weight:650}.node small{display:block;color:var(--muted);font-size:8px;font-weight:400;margin-bottom:3px}.node.hot{border-color:#f0a18d;background:#fff0e9}.node.good{border-color:#9eb7a5;background:#edf4ee}.down{text-align:center;color:#aaa093;font-size:13px;line-height:1}
+.note{font-size:10px;color:var(--muted);line-height:1.65;margin-top:15px}
+.fullcase{border-top:1px solid rgba(25,25,23,.17);margin-top:25px;padding-top:25px}.fullcase summary{cursor:pointer;list-style:none;display:flex;justify-content:space-between;gap:20px;font-size:12px;font-weight:800}.fullcase summary::-webkit-details-marker{display:none}.fullcase summary:after{content:"＋";color:var(--accent);font-size:18px}.fullcase[open] summary:after{content:"−"}.case-detail{padding:20px 0 0;display:grid;grid-template-columns:1fr 1fr;gap:18px}.detail-block{padding:16px;background:rgba(233,228,218,.6);border:1px solid rgba(25,25,23,.09)}.detail-block h4{font-size:11px;margin:0 0 8px}.detail-block p,.detail-block li{font-size:11px;line-height:1.7;color:#625d55}.detail-block p{margin:0}.detail-block ul{margin:0;padding-left:16px}
+.platform{display:grid;grid-template-columns:.8fr 1.2fr;gap:30px;align-items:start}.platform-intro h3{font-size:clamp(27px,4vw,42px);letter-spacing:-.06em;line-height:1.02;margin:0}.platform-intro p{font-size:13px;color:var(--muted);line-height:1.8}.workstream-list{border-top:1px solid #c9c1b4}.workstream{display:grid;grid-template-columns:42px 1fr auto;gap:13px;align-items:start;padding:17px 0;border-bottom:1px solid #c9c1b4}.workstream .n{font-size:9px;color:var(--accent);padding-top:3px}.workstream h4{margin:0;font-size:15px;letter-spacing:-.03em}.workstream p{margin:5px 0 0;font-size:11px;line-height:1.7;color:var(--muted);max-width:560px}.workstream .kind{font-size:8px;text-transform:uppercase;letter-spacing:.08em;color:var(--muted);text-align:right;max-width:90px}
+.project-list{display:grid;grid-template-columns:repeat(3,1fr);gap:10px}.project{display:block;text-decoration:none;border:1px solid rgba(25,25,23,.16);padding:17px;background:rgba(248,245,236,.4);min-height:122px;transition:background .2s}.project:hover{background:var(--paper)}.project small{color:var(--accent);text-transform:uppercase;letter-spacing:.1em;font-size:8px}.project b{display:block;margin-top:10px;font-size:16px;letter-spacing:-.04em}.project span{display:block;margin-top:5px;font-size:10px;line-height:1.5;color:var(--muted)}
+.leadership{display:grid;grid-template-columns:1fr 1fr;gap:14px}.lead-card{padding:23px;border:1px solid rgba(25,25,23,.16);background:rgba(248,245,236,.5)}.lead-card h3{margin:0;font-size:23px;letter-spacing:-.05em}.lead-card p{font-size:12px;color:var(--muted);line-height:1.75}
+.timeline{border-top:1px dashed #bdb5a7}.timeline-row{display:grid;grid-template-columns:130px 1fr;gap:20px;padding:18px 0;border-bottom:1px dashed #bdb5a7}.timeline-row time{font-size:9px;color:var(--accent);text-transform:uppercase;letter-spacing:.08em}.timeline-row h3{font-size:15px;margin:0}.timeline-row p{font-size:11px;color:var(--muted);line-height:1.7;margin:5px 0 0}
+.contact{margin:20px 0 55px;padding:clamp(28px,6vw,66px);position:relative;background:var(--ink);color:var(--paper);overflow:hidden}.contact:after{content:"THANK YOU / COME AGAIN";position:absolute;right:-20px;bottom:-28px;font-size:clamp(35px,8vw,100px);white-space:nowrap;font-weight:850;letter-spacing:-.08em;color:rgba(248,245,236,.045);pointer-events:none}.contact h2{max-width:700px;margin:0;font-size:clamp(44px,8vw,96px);line-height:.9;letter-spacing:-.08em;position:relative;z-index:1}.contact h2 em{color:#ff805f;font-style:normal}.contact p{max-width:500px;margin:22px 0 0;color:#c3bfb5;font-size:13px;line-height:1.8;position:relative;z-index:1}.contact-links{display:flex;flex-wrap:wrap;gap:9px;margin-top:28px;position:relative;z-index:1}.contact-links a,.contact-links button{display:inline-flex;align-items:center;gap:8px;padding:12px 14px;color:var(--paper);border:1px solid #4a4944;background:transparent;border-radius:3px;text-decoration:none;cursor:pointer;font-size:11px}.contact-links a:hover,.contact-links button:hover{background:#2a2a26}footer{max-width:1100px;margin:0 auto;padding:0 24px 28px;display:flex;justify-content:space-between;gap:14px;color:var(--muted);font-size:9px;letter-spacing:.06em;text-transform:uppercase;position:relative;z-index:1}.toast{position:fixed;z-index:50;bottom:22px;left:50%;transform:translate(-50%,12px);padding:10px 14px;background:var(--ink);color:var(--paper);font-size:11px;opacity:0;pointer-events:none;transition:.2s}.toast.show{opacity:1;transform:translate(-50%,0)}
+@media(max-width:760px){.topbar{top:9px;width:calc(100% - 18px);padding:7px 9px}.brand{font-size:9px}.nav a{display:none}.nav button{font-size:10px}.hero{padding-top:95px;min-height:92svh}.hero-note{top:13%;left:20px;max-width:120px;font-size:8px}.hero-side{right:13px;bottom:17%;font-size:8px}.receipt-wrap{width:min(84vw,315px)}.wrap{padding:0 18px}.intro{grid-template-columns:1fr;gap:22px;padding:76px 0 55px}.intro-copy{max-width:600px}.section{padding:55px 0 65px}.section-head{display:block}.section-head p{margin-top:12px}.positioning{grid-template-columns:1fr}.position-card{min-height:0}.case-card{grid-template-columns:1fr;gap:18px;padding:19px}.evidence{min-height:185px}.case-detail{grid-template-columns:1fr}.platform{grid-template-columns:1fr;gap:15px}.project-list{grid-template-columns:1fr 1fr}.leadership{grid-template-columns:1fr}.timeline-row{grid-template-columns:90px 1fr;gap:12px}.contact{margin:10px 0 38px}footer{flex-direction:column}.workstream{grid-template-columns:28px 1fr}.workstream .kind{grid-column:2;text-align:left;max-width:none}}@media(max-width:380px){.project-list{grid-template-columns:1fr}.hero-note{display:none}.item .name{font-size:9px}}
+@media(prefers-reduced-motion:reduce){*,*:before,*:after{scroll-behavior:auto!important;animation-duration:.01ms!important;animation-iteration-count:1!important;transition-duration:.01ms!important}}
+
+/* V3 art direction: bolder receipt, editorial case studies, and a clearer origin story */
+:root{--bg:#e8e2d7;--paper:#fffdf7;--ink:#171714;--muted:#716b61;--line:#c9c1b3;--accent:#ef4d2e;--green:#286449;--blue:#284f68;--shadow:0 34px 90px rgba(34,27,18,.19),0 7px 18px rgba(34,27,18,.10)}
+.hero{min-height:100svh;background:radial-gradient(ellipse at 50% 42%,rgba(255,253,247,.65),transparent 52%)}
+.hero:after{content:"";position:absolute;bottom:0;left:0;right:0;height:1px;background:rgba(23,23,20,.13)}
+.hero-note{top:16%;max-width:200px;font-size:10px;line-height:1.85}
+.hero-note b{font-size:10px;letter-spacing:.13em}
+.hero-side{font-size:10px}
+.receipt-wrap{width:min(100%,390px);filter:drop-shadow(0 22px 26px rgba(34,27,18,.10))}
+.receipt{padding:31px 30px 27px;border:1px solid rgba(23,23,20,.16);background:linear-gradient(105deg,#fffdf8 0%,#f7f2e8 100%);box-shadow:var(--shadow);transform:rotate(-1deg);transition:transform .35s ease}
+.receipt-wrap:hover .receipt{transform:rotate(0deg)}
+.receipt:before{opacity:.06;background:repeating-linear-gradient(0deg,transparent 0 4px,rgba(0,0,0,.13) 4px 5px)}
+.receipt-head{padding-bottom:20px}
+.receipt-mark{width:38px;height:38px;margin-bottom:12px;font-size:16px;border-width:2px}
+.receipt-head h1{font-size:14px;letter-spacing:.07em}
+.receipt-head p{font-size:9px;letter-spacing:.14em}
+.receipt-label{margin:19px 0 9px;font-size:9px;letter-spacing:.1em}
+.item{grid-template-columns:25px 1fr auto;gap:8px;padding:12px 0}
+.item .num{font-size:10px}
+.item .name{font-size:12px;line-height:1.3}
+.item .detail{font-size:9px;line-height:1.5}
+.item .price{font-size:10px;font-weight:700}
+.total{padding:17px 0 15px;align-items:center}
+.total span{font-size:9px;letter-spacing:.1em}
+.total strong{font-size:14px;letter-spacing:-.03em}
+.receipt-foot p{font-size:9px}
+.receipt-foot .scan{font-size:9px;font-weight:800}
+.scroll-hint{font-size:10px}
+.ticker{background:#201f1b;border-color:#201f1b;padding:15px 0}
+.ticker-track{color:#e9e2d7;font-size:10px;letter-spacing:.15em}
+.ticker-track span:after{color:#ff7255}
+.intro{padding-top:125px;padding-bottom:92px}
+.intro h2{font-size:clamp(48px,8.5vw,108px);line-height:.86}
+.intro-copy{font-size:16px;line-height:1.85}
+.section{padding:85px 0 95px}
+.section-head{margin-bottom:38px}
+.section-head h2{font-size:clamp(38px,6vw,70px)}
+.case-grid{gap:22px}
+.case-card{position:relative;overflow:hidden;grid-template-columns:1.02fr .98fr;gap:34px;padding:clamp(24px,4vw,42px);background:rgba(255,253,247,.63);border:1px solid rgba(23,23,20,.17);border-radius:3px}
+.case-card:before{content:"";position:absolute;left:0;top:0;bottom:0;width:5px;background:var(--accent);opacity:.9}
+.case-card:nth-child(2):before{background:#476e87}
+.case-card:nth-child(3):before{background:#6b8062}
+.case-card:nth-child(4):before{background:#bd8a39}
+.case-card:hover{background:#fffdf7;transform:translateY(-4px);box-shadow:0 18px 42px rgba(34,27,18,.07)}
+.case-meta{margin-bottom:23px}
+.tag{background:rgba(255,253,247,.7);font-size:9px;padding:6px 9px}
+.case-card h3{font-size:clamp(30px,4vw,48px);line-height:.99;letter-spacing:-.07em;max-width:560px}
+.case-card .dek{font-size:14px;line-height:1.8;color:#555149}
+.case-card .roleline{font-size:11px;line-height:1.8;padding-top:13px;border-top:1px solid #ddd5c8}
+.evidence{border:1px solid #ded7cb;border-radius:2px;padding:25px;background:#fffdf7;min-height:100%;position:relative}
+.evidence:after{content:"";position:absolute;right:0;top:0;width:44px;height:44px;background:linear-gradient(135deg,transparent 49%,#e9e2d7 50%,#e9e2d7 52%,transparent 53%)}
+.evidence-top{font-size:9px;letter-spacing:.11em}
+.evidence-metrics{gap:18px;margin:34px 0 28px}
+.metric{font-size:clamp(38px,4.7vw,60px);line-height:.92}
+.metric-label{font-size:11px;line-height:1.55;max-width:130px}
+.evidence-bottom{font-size:10px;line-height:1.5}
+.diagram{gap:8px;margin-top:20px}
+.node{padding:12px 13px;font-size:11px;line-height:1.5}
+.node small{font-size:9px;letter-spacing:.1em;margin-bottom:4px}
+.fullcase{margin-top:30px;padding-top:20px}
+.fullcase summary{font-size:13px;align-items:center}
+.fullcase summary:after{width:30px;height:30px;display:grid;place-items:center;border:1px solid #d7cfc2;border-radius:50%;font-size:17px;flex:none}
+.case-detail{gap:18px}
+.detail-block{padding:17px;background:#f4f0e7;border:1px solid #e4ddd1}
+.detail-block h4{font-size:11px;text-transform:uppercase;letter-spacing:.08em;color:#39362f}
+.detail-block p,.detail-block li{font-size:12px;line-height:1.8}
+.note{padding:13px 15px;border-left:2px solid #bcb2a3;background:rgba(255,253,247,.5);font-size:11px}
+.platform-intro h3{font-size:clamp(30px,4vw,47px);line-height:.98}
+.project{padding:22px;min-height:165px;background:rgba(255,253,247,.54);border:1px solid rgba(23,23,20,.14);transition:transform .2s,background .2s}
+.project:hover{background:#fffdf7;transform:translateY(-3px)}
+.project b{font-size:25px}
+.leadership{gap:18px}
+.lead-card{position:relative;padding:clamp(24px,4vw,38px);background:#22211d;color:#f8f4eb;overflow:hidden}
+.lead-card:after{content:"NODEBRIO";position:absolute;right:-10px;bottom:-22px;font-size:clamp(42px,8vw,90px);font-weight:900;letter-spacing:-.09em;color:rgba(255,255,255,.035);pointer-events:none}
+.lead-card:nth-child(2){background:#e3d9c9;color:#201f1b}
+.lead-card h3{font-size:clamp(28px,3vw,39px);letter-spacing:-.06em}
+.lead-card p{font-size:13px;line-height:1.8;max-width:500px}
+.lead-stats{gap:18px;margin-top:28px;padding-top:20px;border-top:1px solid rgba(255,255,255,.2)}
+.lead-card:nth-child(2) .lead-stats{border-color:rgba(23,23,20,.2)}
+.lead-stats strong{font-size:clamp(27px,3vw,40px)}
+.lead-stats span{font-size:10px;line-height:1.5}
+#experience{position:relative}
+.story-intro{display:grid;grid-template-columns:.8fr 1.2fr;gap:36px;align-items:start;margin-bottom:38px;padding:30px;background:#24231f;color:#f8f4eb}
+.story-intro .story-big{font-size:clamp(32px,5vw,58px);font-weight:850;letter-spacing:-.08em;line-height:.92}
+.story-intro p{margin:0;font-size:14px;line-height:1.85;color:#d4cec2}
+.timeline{position:relative;display:grid;gap:0;padding-left:20px}
+.timeline:before{content:"";position:absolute;left:0;top:12px;bottom:12px;width:1px;background:#c4b9a9}
+.timeline-row{position:relative;grid-template-columns:120px 1fr;gap:28px;padding:25px 0 29px;border-bottom:1px solid rgba(23,23,20,.13)}
+.timeline-row:before{content:"";position:absolute;left:-25px;top:32px;width:9px;height:9px;border:2px solid var(--bg);border-radius:50%;background:var(--accent);box-shadow:0 0 0 1px var(--accent)}
+.timeline-row time{font-size:10px;letter-spacing:.1em;color:var(--accent);padding-top:5px}
+.timeline-row h3{font-size:clamp(19px,2.5vw,28px);letter-spacing:-.045em;margin:0 0 7px}
+.timeline-row p{max-width:670px;font-size:13px;line-height:1.8;color:#666056;margin:0}
+.timeline-row .arc-label{display:inline-block;margin-top:10px;font-size:9px;letter-spacing:.1em;text-transform:uppercase;color:#6d675d;border:1px solid #cfc6b8;padding:5px 8px}
+.contact{padding:65px 24px 72px}
+.contact h2{font-size:clamp(48px,8vw,94px);letter-spacing:-.08em;line-height:.9}
+@media(max-width:760px){
+ .hero-note{top:10%;left:18px;max-width:125px;font-size:8px}
+ .hero-side{font-size:8px}
+ .receipt-wrap{width:min(88vw,350px)}
+ .receipt{padding:25px 23px 22px}
+ .receipt-head h1{font-size:12px}
+ .item{padding:10px 0}
+ .item .name{font-size:11px}
+ .item .detail{font-size:8px}
+ .intro{padding-top:84px}
+ .section{padding:58px 0 68px}
+ .case-card{grid-template-columns:1fr;gap:21px;padding:23px 20px}
+ .evidence{min-height:0}
+ .story-intro{grid-template-columns:1fr;gap:16px;padding:23px}
+ .timeline{padding-left:17px}
+ .timeline-row{grid-template-columns:83px 1fr;gap:12px}
+ .timeline-row:before{left:-22px}
+ .lead-card{padding:24px}
+}
+@media(prefers-reduced-motion:reduce){.ticker-track{animation:none}.receipt-wrap:hover .receipt{transform:none}.case-card,.project{transition:none}}
+
+
+/* V4: carry the checkout / receipt metaphor all the way through */
+.checkout-bar{display:grid;grid-template-columns:1fr auto auto;align-items:center;gap:24px;padding:18px 20px;margin:0 0 24px;background:#22211d;color:#f8f5ec;border:1px solid #22211d;box-shadow:5px 5px 0 rgba(34,33,29,.12)}
+.checkout-main{display:flex;align-items:center;gap:13px}.checkout-icon{display:grid;place-items:center;width:34px;height:34px;border-radius:50%;background:#ff5b35;color:#211f1b;font-size:19px;font-weight:900;flex:none}.checkout-main>div{display:grid;gap:5px}.checkout-label{font-size:9px;color:#bfb8ac;letter-spacing:.12em}.checkout-main strong{font-size:14px;letter-spacing:-.025em}.checkout-status{display:flex;align-items:center;gap:8px;font-size:9px;color:#d8d0c3;white-space:nowrap}.status-dot{width:7px;height:7px;border-radius:50%;background:#9bc49d;box-shadow:0 0 0 4px rgba(155,196,157,.12)}.checkout-count{border-left:1px solid #514d45;padding-left:22px;display:grid;gap:3px}.checkout-count b{font-size:25px;line-height:1}.checkout-count span{font-size:8px;color:#bfb8ac;letter-spacing:.1em}
+.line-item-no{font-size:9px;font-weight:800;letter-spacing:.12em;color:var(--accent);margin-right:5px;align-self:center}.case-card{border-top:1px solid #bfb7a9;box-shadow:0 2px 0 rgba(23,23,20,.025)}.case-card:nth-child(odd){background:rgba(255,253,247,.54)}.case-card:nth-child(even){background:rgba(226,219,207,.55)}.case-card:hover{box-shadow:0 12px 28px rgba(37,31,22,.08);transform:translateY(-3px)}.evidence{box-shadow:inset 0 0 0 4px rgba(235,228,216,.38)}.evidence-top{padding-bottom:12px;border-bottom:1px dashed #d5ccbd}.evidence-metrics{padding-bottom:18px;border-bottom:1px dashed #d5ccbd}.evidence-bottom{display:flex;align-items:center;justify-content:space-between;gap:10px}.evidence-bottom b{font-size:8px;letter-spacing:.12em;color:var(--accent)}
+.fullcase{border-top:1px dashed #cfc6b8}.fullcase summary{display:flex;gap:12px;justify-content:space-between;flex-wrap:wrap}.fullcase summary>span:first-child{font-weight:800}.case-detail{padding-top:18px}
+#experience{padding-top:84px;padding-bottom:90px}.journey-intro{display:grid;grid-template-columns:120px 1fr;gap:28px;align-items:center;padding:clamp(24px,4vw,42px);background:#24231f;color:#f8f5ec;margin-bottom:14px;position:relative;overflow:hidden}.journey-intro:after{content:"BUILD / LEARN / SHIP";position:absolute;right:-12px;bottom:-24px;font-size:clamp(35px,7vw,80px);font-weight:900;letter-spacing:-.09em;color:rgba(255,255,255,.035);pointer-events:none;white-space:nowrap}.journey-stamp{width:95px;height:95px;border:1px dashed #81796d;border-radius:50%;display:grid;place-content:center;text-align:center;font-size:10px;line-height:1.35;transform:rotate(-9deg);color:#d9d0c2}.journey-stamp span{color:#ff7255}.journey-kicker{font-size:9px;letter-spacing:.15em;color:#ff7255;margin-bottom:12px}.journey-intro h3{font-size:clamp(29px,4.5vw,53px);line-height:.96;letter-spacing:-.075em;margin:0 0 13px}.journey-intro h3 em{font-style:normal;color:#ff7255}.journey-intro p{font-size:13px;line-height:1.8;color:#d5cec2;max-width:690px;margin:0}
+.journey-grid{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:10px;position:relative}.journey-card{position:relative;display:flex;flex-direction:column;min-height:355px;padding:20px 18px 16px;background:#f8f5ec;border:1px solid #d0c7b8;overflow:hidden}.journey-card:before{content:"";position:absolute;top:0;left:0;right:0;height:4px;background:#bdb3a4}.journey-card:nth-child(2):before{background:#df6a4c}.journey-card:nth-child(3):before{background:#7a8d75}.journey-card:nth-child(4):before{background:#ff5b35}.journey-card-top{display:flex;justify-content:space-between;align-items:center;color:#827a6e;font-size:8px;letter-spacing:.09em}.journey-icon{font-size:24px;color:#a39a8c}.journey-marker{font-size:8px;font-weight:900;letter-spacing:.15em;color:var(--accent);margin-top:34px}.journey-card h3{font-size:clamp(21px,2.4vw,30px);line-height:.99;letter-spacing:-.07em;margin:11px 0 13px}.journey-card p{font-size:11px;line-height:1.75;color:#666056;margin:0 0 25px}.journey-output{margin-top:auto;padding-top:14px;border-top:1px dashed #cfc6b8;display:grid;gap:5px}.journey-output span{font-size:8px;color:#8b8175;letter-spacing:.12em}.journey-output b{font-size:12px}.journey-current{background:#fce5dc;border-color:#e7b8a8}.journey-current .journey-output{border-color:#d6a99a}.journey-closer{display:flex;align-items:center;justify-content:space-between;gap:12px;flex-wrap:wrap;margin-top:13px;padding:15px 17px;border:1px solid #cfc6b8;background:rgba(255,253,247,.45);font-size:8px;letter-spacing:.09em;color:#6e675c}.journey-closer i{font-style:normal;color:var(--accent);font-size:14px}.journey-closer b{color:var(--ink)}
+#contact{padding:clamp(30px,6vw,68px);border:1px solid #38362f;box-shadow:8px 8px 0 rgba(24,23,20,.14);background:#22211d;position:relative}
+.final-receipt-head{display:flex;justify-content:space-between;align-items:center;gap:12px;padding-bottom:18px;margin-bottom:28px;border-bottom:1px dashed #696359;color:#c6beb1;font-size:9px;letter-spacing:.14em}.final-stamp{display:inline-block;padding:9px 12px;border:1px solid #ff7255;color:#ff7255;transform:rotate(3deg);font-weight:800}.contact h2 em{font-style:normal;color:#ff7255}.contact p{max-width:590px;font-size:14px;line-height:1.85;color:#d1c9bd}.contact-links{display:flex;align-items:center;flex-wrap:wrap;gap:9px;margin-top:30px}.contact-links a,.contact-links button{padding:11px 14px;border:1px solid #5d574e;border-radius:2px;text-decoration:none;font-size:11px;background:transparent;color:#f8f5ec}.contact-links a:first-child{background:#ff5b35;color:#201f1b;border-color:#ff5b35;font-weight:800}.contact-links a:hover,.contact-links button:hover{border-color:#ff7255}
+@media(max-width:850px){.journey-grid{grid-template-columns:repeat(2,minmax(0,1fr))}.journey-card{min-height:310px}}
+@media(max-width:700px){.checkout-bar{grid-template-columns:1fr auto;gap:13px;padding:15px}.checkout-status{grid-column:1/-1;grid-row:2}.checkout-count{grid-column:2;grid-row:1;padding-left:14px}.checkout-main strong{font-size:12px}.journey-intro{grid-template-columns:1fr;gap:18px}.journey-stamp{width:70px;height:70px;font-size:8px}.journey-grid{grid-template-columns:1fr 1fr;gap:8px}.journey-card{padding:17px 14px;min-height:330px}.journey-card h3{font-size:24px}.journey-card p{font-size:11px}.journey-closer{justify-content:flex-start}.journey-closer b{width:100%}.summary-meta{display:none}}
+@media(max-width:430px){.journey-grid{grid-template-columns:1fr}.journey-card{min-height:0}.journey-card p{font-size:12px}.journey-output{margin-top:4px}.checkout-status{font-size:8px}}
+
+
+/* Flagship case study: fragmented stack to unified operating layer */
+.flagship-case{grid-template-columns:1.02fr .98fr;align-items:start;background:rgba(255,253,247,.78);padding:clamp(22px,3.5vw,38px);gap:clamp(22px,3.5vw,38px)}
+.flagship-case:before{width:6px}.flagship-case h3{font-size:clamp(30px,4.1vw,48px);max-width:620px}
+.case-quickfacts{display:grid;grid-template-columns:1fr;gap:0;margin-top:23px;border-top:1px dashed #c9c1b4}
+.case-quickfacts>div{display:grid;grid-template-columns:130px 1fr;gap:14px;padding:12px 0;border-bottom:1px dashed #c9c1b4;align-items:baseline}
+.case-quickfacts span{font-size:8px;letter-spacing:.11em;color:#8a8175}.case-quickfacts b{font-size:12px;font-weight:750}
+.case-detail-deep{grid-template-columns:1fr 1fr;align-items:stretch}
+.case-detail-deep .detail-block{padding:18px;background:#f4f0e7}
+.case-detail-deep .detail-block h4{font-size:10px;letter-spacing:.08em;color:#9b432f;text-transform:uppercase}
+.case-detail-deep .detail-block p,.case-detail-deep .detail-block li{font-size:11px;line-height:1.8}
+.case-detail-deep .detail-block ul{padding-left:15px}.case-detail-deep .detail-block li{margin-bottom:5px}
+.flagship-evidence{gap:12px;justify-content:flex-start;min-height:0;padding:clamp(17px,2.5vw,25px);border-style:solid}
+.before-stack{padding:15px;background:#f0ebe1;border:1px solid #ddd4c6;display:grid;grid-template-columns:1fr 1fr;gap:8px}
+.before-label,.after-label{grid-column:1/-1;font-size:8px;letter-spacing:.11em;color:#81776a;margin-bottom:3px}
+.system-chip{display:flex;flex-direction:column;gap:4px;padding:10px;background:#fffdf7;border:1px solid #d9d1c4;min-width:0}
+.system-chip b{font-size:11px}.system-chip span{font-size:9px;line-height:1.45;color:#777064}
+.system-connector{display:flex;align-items:center;justify-content:center;gap:12px;color:#8e8578;font-size:8px;letter-spacing:.1em}
+.system-connector b{display:grid;place-items:center;width:25px;height:25px;border-radius:50%;background:#25231f;color:#ff7255;font-size:15px}
+.after-stack{padding:15px;background:#fce5dc;border:1px solid #e3b4a4}
+.after-label{color:#a64c35}
+.after-core{display:grid;gap:8px;padding:20px;background:#25231f;color:#fff9ef;text-align:center}
+.after-core .mono{font-size:8px;letter-spacing:.12em;color:#ff9b7f}
+.after-core strong{font-size:35px;line-height:1;letter-spacing:-.07em}
+.after-core>span:last-child{font-size:10px;line-height:1.7;color:#d9d0c2}
+.after-outcome{display:grid;gap:5px;padding-top:13px}
+.after-outcome span{font-size:8px;letter-spacing:.1em;color:#98503c}
+.after-outcome b{font-size:12px;line-height:1.55;color:#2a2722}
+.flagship-evidence .evidence-bottom{padding-top:13px;border-top:1px dashed #d0c7b8;font-size:9px}
+.flagship-evidence .note{margin:0;font-size:9px}
+@media(max-width:760px){.flagship-case{grid-template-columns:1fr}.case-detail-deep{grid-template-columns:1fr}.case-quickfacts>div{grid-template-columns:105px 1fr}.flagship-evidence{order:0}}
+
+
+/* Case-study index: concise summaries with a clear path to detail */
+.case-card{grid-template-columns:1fr .82fr;align-items:center;gap:clamp(20px,3vw,34px);padding:clamp(22px,3vw,34px);background:rgba(255,253,247,.68)}
+.case-card h3{font-size:clamp(28px,3.6vw,42px);line-height:.99;max-width:560px}
+.case-card .dek{max-width:590px;font-size:13px;line-height:1.8}
+.case-card .roleline{font-size:11px;line-height:1.8}
+.case-link{display:inline-flex;align-items:center;gap:14px;margin-top:22px;padding:11px 14px;background:#24231f;color:#fff9ef;text-decoration:none;font-size:11px;font-weight:750;border:1px solid #24231f;transition:background .2s,color .2s}
+.case-link span{color:#ff7255;font-size:15px}.case-link:hover{background:#ff5b35;color:#211f1b;border-color:#ff5b35}.case-link:hover span{color:#211f1b}
+.mini-system{display:grid;grid-template-columns:1fr 1fr;gap:7px;margin:22px 0 14px}.mini-system span{padding:12px 10px;background:#f0ebe1;border:1px solid #d9d1c4;font-size:10px;font-weight:750;text-align:center}
+.mini-arrow{font-size:8px;letter-spacing:.08em;text-align:center;color:#8a8175;margin:13px 0}
+.mini-result{display:grid;gap:7px;padding:20px;background:#fce5dc;border:1px solid #e3b4a4}.mini-result b{font-size:25px;letter-spacing:-.05em}.mini-result span{font-size:11px;line-height:1.6}
+.mini-flow{display:grid;gap:7px;margin:20px 0}.mini-flow span{padding:12px;background:#f0ebe1;border:1px solid #d9d1c4;text-align:center;font-size:11px}.mini-flow b{text-align:center;color:#e65c3a;font-size:15px;line-height:1}
+.case-card .evidence{min-height:0;justify-content:flex-start;gap:10px;border-style:solid}
+.case-card .evidence-bottom{margin-top:auto;padding-top:13px;border-top:1px dashed #d0c7b8;font-size:9px}
+@media(max-width:760px){.case-card{grid-template-columns:1fr;gap:22px}.case-card .evidence{order:2}.case-link{margin-top:18px}}
+
+
+/* Production navigation: clear focus states and a compact mobile menu */
+.topbar{z-index:100}
+.nav a:focus-visible,.nav button:focus-visible,.brand:focus-visible,.menu-toggle:focus-visible{outline:2px solid var(--accent);outline-offset:4px}
+.nav a span{color:var(--accent)}
+.menu-toggle{display:none;border:1px solid var(--line);background:var(--paper);color:var(--ink);padding:8px 10px;font-size:10px;font-weight:750;cursor:pointer}
+@media(max-width:760px){
+  .topbar{position:fixed}
+  .menu-toggle{display:inline-flex;align-items:center;gap:8px}
+  .nav{display:none;position:absolute;top:calc(100% + 7px);left:0;right:0;padding:12px;background:var(--paper);border:1px solid var(--line);box-shadow:0 14px 35px rgba(23,23,20,.12);flex-direction:column;align-items:stretch;gap:0}
+  .nav.open{display:flex}
+  .nav a{display:flex;justify-content:space-between;padding:12px 8px;border-bottom:1px solid var(--line);font-size:11px}
+  .nav button{align-self:flex-start;margin-top:10px}
+}
+@media(min-width:761px){.menu-toggle{display:none}}
+
+
+
+/* V3 mobile polish: prevent clipping, keep interactions thumb-friendly */
+html{max-width:100%;overflow-x:clip}
+body{max-width:100%;overflow-x:clip}
+img,svg,video,canvas,iframe{max-width:100%}
+button,a,input,select,textarea{-webkit-tap-highlight-color:transparent}
+button,a{touch-action:manipulation}
+section[id],main[id]{scroll-margin-top:96px}
+@media(max-width:760px){
+  .topbar{left:9px;right:9px;transform:none;width:auto;max-width:none;border-radius:18px;min-height:43px;gap:8px}
+  .brand{min-width:0;max-width:calc(100% - 82px);overflow:hidden;text-overflow:ellipsis;white-space:nowrap;font-size:clamp(8px,2.4vw,10px)}
+  .menu-toggle{flex:0 0 auto;min-height:36px;border-radius:12px;padding:8px 10px}
+  .nav{max-height:calc(100dvh - 75px);overflow-y:auto;border-radius:14px}
+  .nav a{min-height:42px;align-items:center}
+  .nav button{min-height:38px}
+  .hero{min-height: min(92svh, 850px);padding-left:10px;padding-right:10px;overflow:visible}
+  .receipt-wrap{max-width:calc(100vw - 34px)}
+  .receipt{max-width:100%;overflow-wrap:anywhere}
+  .hero-note{max-width:min(125px,30vw)}
+  .hero-side{max-width:32vw;text-align:right}
+  .wrap{width:100%;max-width:100%;padding-left:16px;padding-right:16px}
+  .section-head h2,.intro h2,.positioning h2{overflow-wrap:anywhere}
+  .case-card,.case-detail,.story-intro,.platform,.leadership,.journey-intro,.flagship-case,.case-detail-deep{min-width:0}
+  .case-card>* ,.case-detail>* ,.story-intro>* ,.platform>* ,.leadership>* ,.journey-grid>*{min-width:0}
+  .case-card h3,.case-card p,.case-detail p,.workstream,.position-card{overflow-wrap:anywhere}
+  .project-list{grid-template-columns:repeat(2,minmax(0,1fr))}
+  .journey-grid{grid-template-columns:repeat(2,minmax(0,1fr))}
+  .journey-card{min-width:0}
+  .checkout-bar>*{min-width:0}
+  .checkout-main strong{overflow-wrap:anywhere}
+  .timeline-row{min-width:0}
+  .timeline-row>*{min-width:0;overflow-wrap:anywhere}
+  .contact a,.contact button{max-width:100%;overflow-wrap:anywhere}
+}
+@media(max-width:430px){
+  .topbar{padding:6px 7px 6px 10px}
+  .brand{font-size:8px;letter-spacing:.01em}
+  .menu-toggle{font-size:9px;padding:7px 8px}
+  .hero{min-height:88svh;padding-top:88px}
+  .receipt-wrap{width:calc(100vw - 34px)}
+  .receipt{padding:21px 17px 18px}
+  .receipt-head h1{font-size:11px;letter-spacing:.04em}
+  .receipt-head p{font-size:7px}
+  .receipt-label{gap:8px;font-size:7px}
+  .item{gap:9px}
+  .item .name{font-size:10px}
+  .item .detail{font-size:7px}
+  .wrap{padding-left:13px;padding-right:13px}
+  .project-list,.journey-grid{grid-template-columns:1fr}
+  .timeline-row{grid-template-columns:70px minmax(0,1fr);gap:9px}
+  .case-card{padding:18px 15px}
+  .story-intro{padding:18px}
+  .lead-card{padding:19px}
+  .checkout-bar{grid-template-columns:minmax(0,1fr) auto}
+  .checkout-count{padding-left:9px}
+  .case-quickfacts>div{grid-template-columns:minmax(82px, .7fr) minmax(0,1fr);gap:9px}
+}
+@media(max-width:350px){
+  .brand{max-width:calc(100% - 70px);font-size:7px}
+  .hero-note,.hero-side{display:none}
+  .receipt{padding:18px 13px 15px}
+  .receipt-head h1{font-size:10px}
+  .item .name{font-size:9px}
+  .case-card{padding:15px 12px}
+}
+
+a.nav-resume,
+.nav-resume {
+  display: inline-flex !important;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  padding: 5px 10px  !important;
+  border: 1px solid #ff5b35 !important;
+  border-radius: 999px !important;
+  background-color: #ff5b35 !important;
+  color: #fff !important;
+  text-decoration: none !important;
+  font-weight: 600;
+  line-height: 1.2;
+  transition: background-color 0.2s ease, transform 0.2s ease;
+}
+
+.nav-resume span {
+  color: #fff !important;
+  font-size: 10px;
+}
+
+.nav-resume:hover {
+  background-color: #e94b28 !important;
+  border-color: #e94b28 !important;
+  transform: translateY(-1px);
+}
+
+
+</style>
+</head>
+<body>
+<div class="progress" id="progress"></div>
+<header class="topbar">
+  <a class="brand" href="#top" aria-label="Anjali Chaturvedi portfolio home">INTERNET <i aria-hidden="true">✳</i> CORNER / ANJALI</a>
+  <button class="menu-toggle" id="menuToggle" type="button" aria-expanded="false" aria-controls="mainNav">Menu <span aria-hidden="true">＋</span></button>
+  <nav class="nav" id="mainNav" aria-label="Main navigation">
+    <a href="#work">Case studies</a>
+    <a href="product-playground.html">Product Playground <span aria-hidden="true">↗</span></a>
+    <a href="#platform">Product range</a>
+    <a href="#built">Builds</a>
+    <a href="#contact">Contact</a>
+    <a href="Anjali_Chaturvedi_APM.pdf" class="nav-resume" download> Resume <span>↗</span> </a>
+  </nav>
+</header>
+<main id="top">
+<section class="hero" id="receiptStage" aria-label="The Infinite Receipt">
+  <div class="hero-note"><b class="mono">A personal inventory</b>Problems found.<br>Systems connected.<br>Products shipped.</div>
+  <div class="receipt-wrap" id="receiptWrap">
+    <article class="receipt">
+      <header class="receipt-head"><div class="receipt-mark">A</div><h1>ANJALI CHATURVEDI</h1><p class="mono">ENGINEERING → COMMUNITY → PRODUCT</p></header>
+      <div class="receipt-label mono"><span>CAREER RECEIPT</span><span>NO. 001</span></div>
+      <div class="items">
+        <button class="item" data-target="intro"><span class="num mono">01</span><span class="name">ENGINEERING ROOTS<span class="detail">Built the thing. Learned how it works.</span></span><span class="price mono">× 01</span></button>
+        <button class="item" data-target="work"><span class="num mono">02</span><span class="name">PRODUCT IN PRACTICE<span class="detail">Find the friction. Ship the change.</span></span><span class="price mono">× ∞</span></button>
+        <button class="item" data-target="case-platform"><span class="num mono">03</span><span class="name">PLATFORMS & SYSTEMS<span class="detail">APIs, workflows, integrations</span></span><span class="price mono">× 01</span></button>
+        <button class="item" data-target="case-consumer"><span class="num mono">04</span><span class="name">CONSUMER EXPERIENCES<span class="detail">Web · Android · iOS</span></span><span class="price mono">× 03+</span></button>
+        <button class="item" data-target="case-ai"><span class="num mono">05</span><span class="name">APPLIED AI<span class="detail">Automation with a measurable job</span></span><span class="price mono">× ∞</span></button>
+        <button class="item" data-target="platform"><span class="num mono">06</span><span class="name">B2B × B2C<span class="detail">Transferable product thinking</span></span><span class="price mono">× ∞</span></button>
+        <button class="item" data-target="built"><span class="num mono">07</span><span class="name">CODE & COMMUNITY<span class="detail">From algorithms to a nonprofit</span></span><span class="price mono">× ∞</span></button>
+        <button class="item" data-target="contact"><span class="num mono">08</span><span class="name">THE NEXT HARD PROBLEM<span class="detail">Open to building what's next</span></span><span class="price mono">× ∞</span></button>
+      </div>
+      <div class="total"><span class="mono">TOTAL</span><strong>VALUE: IN PROGRESS.</strong></div>
+      <footer class="receipt-foot"><p class="mono">BUILT WITH CURIOSITY. SHIPPED WITH INTENT.</p><p class="scan mono">SCROLL TO INSPECT ↓</p></footer>
+    </article>
+  </div>
+  <div class="hero-side mono">Delhi, India · Product, end to end</div>
+  <div class="scroll-hint mono"><span class="arrow">↓</span> Scroll to inspect · Click a line item</div>
+</section>
+<div class="ticker" aria-hidden="true"><div class="ticker-track mono"><span>Find the problem</span><span>Understand the system</span><span>Make the trade-off</span><span>Ship the fix</span><span>Measure what changed</span><span>Find the problem</span><span>Understand the system</span><span>Make the trade-off</span><span>Ship the fix</span><span>Measure what changed</span></div></div>
+
+<div class="wrap">
+<section class="intro" id="intro">
+  <div><div class="eyebrow mono">The person behind the product</div><h2>I make complex<br>things work for<br><em>people.</em></h2></div>
+  <div class="intro-copy">
+    <p>I'm Anjali, an Associate Product Manager with a computer science background. I work across customer experience, consumer journeys, platform integrations and automation.</p>
+    <p>My work sits where user needs, business goals and technical systems meet  |  from finding the problem and writing the PRD to aligning teams, testing the edge cases and measuring what changed.</p>
+    <a class="text-link" href="#work">Explore the work ↓</a>
+  </div>
+</section>
+
+<section class="section" id="experience">
+  <div class="section-head"><div><div class="eyebrow mono">Build log / The through-line</div><h2>How I got here.</h2></div><p>Four different kinds of work. One increasingly clear instinct: understand the system, understand the people, then make the thing better.</p></div>
+  <div class="journey-intro">
+    <div class="journey-stamp mono">ORIGIN<br>STORY<br><span>01 | 04</span></div>
+    <div><div class="journey-kicker mono">THE SHORT VERSION</div><h3>First I learned to build.<br>Then I learned <em>what to build.</em></h3><p>Engineering gave me the technical foundation. Nodebrew taught me to build with people. Growth taught me to look for behaviour and friction. Product is where those lessons meet.</p></div>
+  </div>
+  <div class="journey-grid">
+    <article class="journey-card"><div class="journey-card-top"><span class="mono">01 / FOUNDATION</span><span class="journey-icon">⌘</span></div><div class="journey-marker">ENGINEERING</div><h3>Understand<br>the machinery.</h3><p>Computer Science at JIIT Noida, software projects, algorithms and AI/ML. I learned to think in systems | and still use that grounding when working through APIs, data flows, edge cases and technical trade-offs.</p><div class="journey-output"><span class="mono">TAKEAWAY</span><b>Know how it works.</b></div></article>
+    <article class="journey-card"><div class="journey-card-top"><span class="mono">02 / OWNERSHIP</span><span class="journey-icon">↗</span></div><div class="journey-marker">COMMUNITY</div><h3>Make a mission<br>real.</h3><p>Founded and scaled Nodebrew, a nonprofit community. Programmes, hackathons, partnerships and sponsor relationships taught me to rally people around a goal and create momentum with limited resources.</p><div class="journey-output"><span class="mono">TAKEAWAY</span><b>Build with people.</b></div></article>
+    <article class="journey-card"><div class="journey-card-top"><span class="mono">03 / DISCOVERY</span><span class="journey-icon">⌁</span></div><div class="journey-marker">GROWTH</div><h3>Notice what<br>people actually do.</h3><p>At SkillArena, I worked around acquisition, activation and user feedback. It pushed me to look past activity metrics and ask where people get stuck, what makes them act and what deserves to change.</p><div class="journey-output"><span class="mono">TAKEAWAY</span><b>Follow the behaviour.</b></div></article>
+    <article class="journey-card journey-current"><div class="journey-card-top"><span class="mono">04 / INTEGRATION</span><span class="journey-icon">✳</span></div><div class="journey-marker">PRODUCT</div><h3>Turn the insight<br>into a shipped change.</h3><p>At Nutrabay, I bring those threads together across consumer journeys, operational platforms, delivery recovery and AI-enabled workflows | from discovery and PRDs through integrations, UAT, launch and measurement.</p><div class="journey-output"><span class="mono">TAKEAWAY</span><b>Own the outcome.</b></div></article>
+  </div>
+  <div class="journey-closer mono"><span>TECHNICAL DEPTH</span><i>×</i><span>COMMUNITY OWNERSHIP</span><i>×</i><span>PRODUCT EXECUTION</span><b>→ MY WAY OF WORKING</b></div>
+</section>
+
+<section class="section" id="work">
+  <div class="section-head"><div><div class="eyebrow mono">Field notes / Product case studies · 01–04</div><h2>From messy systems<br>to shipped products.</h2></div><p>Short overview here. Full breakdowns live in their own case files.</p></div>
+  <div class="checkout-bar">
+    <div class="checkout-main"><span class="checkout-icon">✓</span><div><span class="mono checkout-label">ORDER SUMMARY / SELECTED WORK</span><strong>Four case files. Open the one you want to inspect.</strong></div></div>
+    <div class="checkout-status"><span class="status-dot"></span><span class="mono">STATUS: IN PROGRESS</span></div>
+    <div class="checkout-count mono"><b>04</b><span>CASE FILES</span></div>
+  </div>
+  <div class="positioning">
+    <article class="position-card"><div class="index mono">01 / CUSTOMER</div><h3>Make the journey work</h3><p>Reduce friction across discovery, purchase, support and post-purchase moments.</p></article>
+    <article class="position-card"><div class="index mono">02 / PLATFORM</div><h3>Connect the system</h3><p>Bring fragmented tools, data and teams into a workflow people can trust.</p></article>
+    <article class="position-card"><div class="index mono">03 / EXECUTION</div><h3>Turn plans into outcomes</h3><p>Translate problems into requirements, launch with teams and measure results.</p></article>
+  </div>
+  <div class="filters" role="group" aria-label="Filter case studies">
+    <button class="filter" aria-pressed="true" data-filter="all">All work</button>
+    <button class="filter" aria-pressed="false" data-filter="b2c">Consumer / B2C</button>
+    <button class="filter" aria-pressed="false" data-filter="b2b">Platform / B2B</button>
+    <button class="filter" aria-pressed="false" data-filter="ai">AI & automation</button>
+    <button class="filter" aria-pressed="false" data-filter="growth">Growth & discovery</button>
+  </div>
+  <div class="case-grid">
+    <article class="case-card" id="case-platform" data-cats="b2b">
+  <div>
+    <div class="case-meta"><span class="line-item-no mono">LINE ITEM 01</span><span class="tag">Platform / B2B</span><span class="tag">Integrations</span></div>
+    <h3>One customer.<br>Five disconnected systems.</h3>
+    <p class="dek">Shipment tracking, calling, ticketing and order data lived in separate tools. I led the product work to bring the customer context and key actions into Kapture, reducing the need to jump between systems.</p>
+    <div class="roleline"><b>Focus:</b> product discovery, API integrations, workflow design, NDR actions and cross-functional delivery.</div>
+    <a class="case-link" href="product-playground.html#platform">Read the case study <span>↗</span></a>
+  </div>
+  <div class="evidence">
+    <div class="evidence-top"><span>Before → after</span><span class="mono">01 / 04</span></div>
+    <div class="mini-system"><span>ClickPost</span><span>Exotel + Kaleyra</span><span>Freshdesk</span><span>Nutrabay Admin</span></div>
+    <div class="mini-arrow mono">API INTEGRATIONS + WORKFLOW DESIGN ↓</div>
+    <div class="mini-result"><b>Kapture</b><span>Ticketing with order context, shipment visibility and NDR actions</span></div>
+    <div class="evidence-bottom"><span>Support · Logistics · Platform</span><b>ONE WORKFLOW ↗</b></div>
+  </div>
+</article>
+
+<article class="case-card" id="case-content" data-cats="b2b operations"><div>
+<div class="case-meta"><span class="line-item-no mono">LINE ITEM 02</span><span class="tag">Content operations</span><span class="tag">Knowledge base</span></div>
+<h3>Good answers need<br>a content system.</h3><p class="dek">Internal content management: organising knowledge, consolidating overlapping FAQs and making approved content available to the systems that need it.</p>
+<div class="roleline"><b>Focus:</b> content lifecycle, FAQ consolidation, review states, ownership and CMS/KB integration.</div><a class="case-link" href="product-playground.html#content">Explore the content workflow <span>↗</span></a></div>
+<div class="evidence"><div class="evidence-top"><span>Content lifecycle</span><span class="mono">02 / 06</span></div><div class="mini-flow"><span>Draft / existing FAQ</span><b>↓</b><span>Review + consolidate</span><b>↓</b><span>Approved content via API</span></div><div class="evidence-bottom"><span>Content · Operations · APIs</span><b>MANAGE CONTENT ↗</b></div></div></article>
+<article class="case-card" id="case-help" data-cats="b2c growth"><div>
+<div class="case-meta"><span class="line-item-no mono">LINE ITEM 03</span><span class="tag">Consumer / B2C</span><span class="tag">Self-service</span></div>
+<h3>Help customers<br>help themselves.</h3><p class="dek">The Help Center revamp focused on the customer-facing journey: helping people find the right answer, understand the next step and reach support when self-service does not work.</p>
+<div class="roleline"><b>Focus:</b> information architecture, search intent, self-service journeys, failed-search recovery and feedback loops.</div><a class="case-link" href="product-playground.html#help">Explore the Help Center <span>↗</span></a></div>
+<div class="evidence"><div class="evidence-top"><span>Customer journey</span><span class="mono">03 / 06</span></div><div class="mini-flow"><span>Search naturally</span><b>↓</b><span>Use a useful answer</span><b>↓</b><span>Resolve or contact support</span></div><div class="evidence-bottom"><span>Discovery · UX · Self-service</span><b>FIND AN ANSWER ↗</b></div></div></article>
+<article class="case-card" id="case-consent" data-cats="b2c privacy"><div>
+<div class="case-meta"><span class="line-item-no mono">LINE ITEM 04</span><span class="tag">Privacy experience</span><span class="tag">Web · Android · iOS</span></div>
+<h3>Make consent a choice,<br>not a dark pattern.</h3><p class="dek">Consent management focused on clear choices, recorded state and consistent behaviour across web and mobile, while avoiding unnecessary friction in the purchase journey.</p>
+<div class="roleline"><b>Focus:</b> consent states, persistence, cross-platform consistency, edge cases and UAT.</div><a class="case-link" href="product-playground.html#consent">Explore consent states <span>↗</span></a></div>
+<div class="evidence"><div class="evidence-top"><span>Preference states</span><span class="mono">04 / 06</span></div><div class="mini-flow"><span>Explain the purpose</span><b>↓</b><span>Capture the choice</span><b>↓</b><span>Respect saved state</span></div><div class="evidence-bottom"><span>Privacy · Platforms · Trust</span><b>HONOUR THE CHOICE ↗</b></div></div></article>
+
+    <article class="case-card" id="case-ai" data-cats="ai b2c b2b">
+  <div>
+    <div class="case-meta"><span class="line-item-no mono">LINE ITEM 05</span><span class="tag">AI / Automation</span><span class="tag">Customer experience</span></div>
+    <h3>Automate the repeatable.<br>Keep a human path.</h3>
+    <p class="dek">Moved support beyond manual email and calls by introducing AI chat with order-aware context, intent-based AI calling and automated workflows with defined escalation paths.</p>
+    <div class="roleline"><b>Focus:</b> use-case selection, intent mapping, personalisation, fallback rules and success measurement.</div>
+    <a class="case-link" href="product-playground.html#ai">Read the case study <span>↗</span></a>
+  </div>
+  <div class="evidence">
+    <div class="evidence-top"><span>Automation design</span><span class="mono">05 / 06</span></div>
+    <div class="mini-flow"><span>Customer intent</span><b>↓</b><span>Answer, act or escalate</span><b>↓</b><span>Track resolution</span></div>
+    <div class="evidence-bottom"><span>AI chat · Voice · Workflows</span><b>HUMAN + AI ↗</b></div>
+  </div>
+</article>
+
+    <article class="case-card" id="case-ndr" data-cats="b2c b2b ai">
+  <div>
+    <div class="case-meta"><span class="line-item-no mono">LINE ITEM 06</span><span class="tag">Delivery recovery</span><span class="tag">ClickPost · Exotel</span></div>
+    <h3>A failed delivery is<br>a recovery problem.</h3>
+    <p class="dek">Built the product logic around NDR follow-up, customer communication and operational visibility. The goal was to reach customers sooner, capture instructions and understand which recovery journeys led to delivery.</p>
+    <div class="roleline"><b>Focus:</b> NDR workflows, communication sequencing, AWB-level funnel analysis and delivery metrics.</div>
+    <a class="case-link" href="product-playground.html#ndr">Read the case study <span>↗</span></a>
+  </div>
+  <div class="evidence">
+    <div class="evidence-top"><span>Recovery funnel</span><span class="mono">06 / 06</span></div>
+    <div class="mini-flow"><span>NDR detected</span><b>↓</b><span>Contact + instructions</span><b>↓</b><span>Delivery or RTO outcome</span></div>
+    <div class="evidence-bottom"><span>Messaging · Voice · Analytics</span><b>RECOVER ↗</b></div>
+  </div>
+</article>
+  </div>
+</section>
+
+<section class="section" id="platform">
+  <div class="section-head"><div><div class="eyebrow mono">Product range / Transferable skills</div><h2>Different users.<br>Different products.</h2></div><p>The domain changes. The work of understanding users, systems and outcomes still matters.</p></div>
+  <div class="platform">
+    <div class="platform-intro"><h3>Built in D2C.<br>Useful across B2B<br>and B2C.</h3><p>My current work spans consumer experiences and internal platforms. That mix has taught me to think about both sides of a product: the person using it and the business or team relying on it.</p><p>I don't claim every domain is the same. I bring a way to learn the domain, map the workflow, test assumptions and ship a product that solves a real problem.</p></div>
+    <div class="workstream-list">
+      <article class="workstream"><div class="n mono">01</div><div><h4>Consumer products / B2C</h4><p>Customer journeys, mobile and web experiences, health content, privacy and consent, self-serve support, purchase and post-purchase flows.</p></div><div class="kind">Customer-facing</div></article>
+      <article class="workstream"><div class="n mono">02</div><div><h4>Platforms / B2B</h4><p>Internal workspaces, integrations, operational tooling, reporting, ticket routing, permissions, workflow design and cross-team dependencies.</p></div><div class="kind">Workflow-heavy</div></article>
+      <article class="workstream"><div class="n mono">03</div><div><h4>AI products and automation</h4><p>Use-case selection, eligibility rules, human handoffs, knowledge retrieval, voice workflows and metrics that separate automation from resolution.</p></div><div class="kind">AI-enabled</div></article>
+      <article class="workstream"><div class="n mono">04</div><div><h4>Growth and discovery</h4><p>User feedback, onboarding friction, activation experiments, funnel analysis and prioritisation based on customer and business needs.</p></div><div class="kind">Growth-minded</div></article>
+      <article class="workstream"><div class="n mono">05</div><div><h4>Technical products</h4><p>API contracts, data flows, integration constraints, system behaviour, test scenarios and close work with engineering.</p></div><div class="kind">Technical depth</div></article>
+    </div>
+  </div>
+</section>
+
+<section class="section" id="built">
+  <div class="section-head"><div><div class="eyebrow mono">Things I've built / Beyond the day job</div><h2>Code was the<br>first product.</h2></div><p>Selected projects that show technical range, curiosity and a habit of building.</p></div>
+  <div class="project-list">
+    <a class="project" href="https://github.com/anjalichaturvedi/aira" target="_blank" rel="noopener"><small>AI / Health</small><b>AIRA</b><span>AI respiratory assistant using a web frontend and Python backend.</span></a>
+    <a class="project" href="https://github.com/anjalichaturvedi/automate" target="_blank" rel="noopener"><small>AI / IoT</small><b>Automate</b><span>Predictive automotive service workflows.</span></a>
+    <a class="project" href="https://github.com/anjalichaturvedi/campus-navigator" target="_blank" rel="noopener"><small>Algorithms / Mapping</small><b>Campus Navigator</b><span>Campus routes using OpenStreetMap and A*; work presented at IC3 with an IEEE paper.</span></a>
+    <a class="project" href="https://github.com/anjalichaturvedi/comparely" target="_blank" rel="noopener"><small>Data / Commerce</small><b>Comparely</b><span>Product price comparison and wishlists.</span></a>
+    <a class="project" href="https://github.com/anjalichaturvedi" target="_blank" rel="noopener"><small>Personal tool</small><b>WorkOS</b><span>A personal workspace for tasks, projects, notes and follow-ups.</span></a>
+    <a class="project" href="https://github.com/anjalichaturvedi" target="_blank" rel="noopener"><small>AI / Security</small><b>GovernAI-Soc</b><span>Intrusion detection with uncertainty, explainability and policy actions.</span></a>
+    <a class="project" href="https://github.com/anjalichaturvedi" target="_blank" rel="noopener"><small>Desktop</small><b>Ordrly</b><span>A desktop tool to organise files.</span></a>
+    <a class="project" href="https://github.com/anjalichaturvedi" target="_blank" rel="noopener"><small>Data / Network</small><b>Network Digital Twin</b><span>Network simulation, monitoring and optimisation.</span></a>
+    <a class="project" href="https://github.com/anjalichaturvedi" target="_blank" rel="noopener"><small>Web</small><b>More experiments</b><span>Browse the wider collection on GitHub.</span></a>
+  </div>
+</section>
+
+<section class="section" id="leadership">
+  <div class="section-head"><div><div class="eyebrow mono">Outside the product backlog</div><h2>Build with people,<br>not just systems.</h2></div><p>Leadership and growth work that shaped how I organise teams and turn ideas into programmes.</p></div>
+  <div class="leadership">
+    <article class="lead-card"><div class="eyebrow mono">Chapter 02 / Founder · Community builder</div><h3>Nodebrew</h3><p>Founded and scaled a nonprofit community focused on women in tech. I helped turn a mission into a working organisation: community growth, programmes, hackathons, partnerships and sponsor relationships. It was my first real lesson in building a product around people | not just shipping software.</p></article>
+    <article class="lead-card"><div class="eyebrow mono">Chapter 03 / Growth · User insight</div><h3>SkillArena</h3><p>Worked on user acquisition and activation across college communities. Analysed user feedback to find onboarding friction and inform product improvements.</p></article>
+  </div>
+  
+</section>
+
+
+
+<section class="contact" id="contact">
+  <div class="final-receipt-head"><span class="mono">RECEIPT COMPLETE</span><span class="final-stamp mono">NEXT ORDER?</span></div>
+  <h2>That’s the<br><em>receipt.</em><br>What’s next?</h2>
+  <p>I like hard problems with real users, messy systems and room to make something meaningfully better. If you’re building something that needs both product thinking and technical depth, let’s talk.</p>
+  <div class="contact-links"><a href="mailto:anjaliichaturvedi@gmail.com">Email me ↗</a><a href="https://linkedin.com/in/anjali-chaturvedi" target="_blank" rel="noopener">LinkedIn ↗</a><a href="https://github.com/anjalichaturvedi" target="_blank" rel="noopener">GitHub ↗</a><button id="backTop" type="button">Back to the top ↑</button></div>
+</section>
+</div>
+</main>
+<footer class="mono"><span>© Anjali Chaturvedi</span><span>Product / Systems / Everything else</span><span>Delhi, India</span></footer>
+<script>
+(() => {
+ const stage=document.getElementById('receiptStage'),wrap=document.getElementById('receiptWrap'),progress=document.getElementById('progress');
+ const reduce=window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+ function update(){
+   const max=document.documentElement.scrollHeight-innerHeight;progress.style.width=(max>0?scrollY/max*100:0)+'%';
+   if(reduce||innerWidth<701){wrap.style.transform='';return}
+   const rect=stage.getBoundingClientRect(),range=Math.max(1,stage.offsetHeight-innerHeight),p=Math.min(1,Math.max(0,-rect.top/range));
+   wrap.style.transform=`translateY(${-p*18}px) scale(${1+p*.46})`;
+ }
+ addEventListener('scroll',update,{passive:true});addEventListener('resize',update);update();
+ document.querySelectorAll('.item').forEach(b=>b.addEventListener('click',()=>{const t=document.getElementById(b.dataset.target);if(t)t.scrollIntoView({behavior:reduce?'auto':'smooth',block:'start'})}));
+ document.getElementById('skip').addEventListener('click',()=>document.getElementById('work').scrollIntoView({behavior:reduce?'auto':'smooth'}));
+
+ const menuToggle=document.getElementById('menuToggle');
+ const mainNav=document.getElementById('mainNav');
+ if(menuToggle&&mainNav){
+   menuToggle.addEventListener('click',()=>{
+     const open=menuToggle.getAttribute('aria-expanded')!=='true';
+     menuToggle.setAttribute('aria-expanded',String(open));
+     menuToggle.innerHTML=open?'Close <span aria-hidden="true">×</span>':'Menu <span aria-hidden="true">＋</span>';
+     mainNav.classList.toggle('open',open);
+   });
+   mainNav.querySelectorAll('a').forEach(link=>link.addEventListener('click',()=>{
+     menuToggle.setAttribute('aria-expanded','false');
+     menuToggle.innerHTML='Menu <span aria-hidden="true">＋</span>';
+     mainNav.classList.remove('open');
+   }));
+ }
+
+ document.getElementById('backTop').addEventListener('click',()=>scrollTo({top:0,behavior:reduce?'auto':'smooth'}));
+ const filters=[...document.querySelectorAll('.filter')],cards=[...document.querySelectorAll('.case-card')];
+ filters.forEach(btn=>btn.addEventListener('click',()=>{filters.forEach(f=>f.setAttribute('aria-pressed',String(f===btn)));const wanted=btn.dataset.filter;cards.forEach(c=>{const cats=(c.dataset.cats||'').split(' ');c.hidden=!(wanted==='all'||cats.includes(wanted))})}));
+})();
+</script>
+</body>
+</html>
