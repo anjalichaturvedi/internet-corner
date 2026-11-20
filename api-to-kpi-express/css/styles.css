@@ -1,0 +1,142 @@
+/* API to KPI Express — Anjali Chaturvedi
+   Layout note: the scene is a fixed 1200x760 stage. Panels are 1200px wide
+   and laid side by side inside a horizontal scroller. Scroll position drives
+   the parallax, the sky colour and the train (see js/scene.js). */
+
+:root{
+  --navy:#163663; --ink:#0B1A33; --yellow:#F2B705; --cream:#E9E4D6;
+  --card:#163663; --card-edge:#F3EFE4; --card-line:#3E639B; --card-text:#E8EEF9;
+}
+*{box-sizing:border-box}
+html,body{margin:0;height:100%;background:var(--ink)}
+body{display:flex;align-items:center;justify-content:center;min-height:100vh;
+  font-family:'IBM Plex Mono',monospace}
+a{color:var(--yellow)} a:hover{color:#fff}
+
+/* Stage */
+#frame{position:relative;width:1200px;height:760px;overflow:hidden}
+#sky{position:absolute;inset:0;background:linear-gradient(180deg,#6064A0,#FABE8C)}
+#sun{position:absolute;width:70px;height:70px;border-radius:50%;background:#FFE9A8}
+#sunGlow{position:absolute;width:260px;height:260px;border-radius:50%;
+  background:radial-gradient(circle,rgba(255,228,150,.7) 0%,rgba(255,228,150,0) 70%)}
+.cloud{position:absolute;border-radius:999px;background:rgba(255,255,255,.75);filter:blur(1.5px)}
+#cloud1{top:112px;width:190px;height:44px}
+#cloud2{top:186px;width:130px;height:34px;background:rgba(255,255,255,.7)}
+#cloud3{top:92px;width:150px;height:38px;background:rgba(255,255,255,.65)}
+#skyline{position:absolute;left:0;top:250px;width:2400px;height:200px;display:flex}
+#trees{position:absolute;left:0;top:395px;width:2400px;height:170px;display:flex}
+#masts{position:absolute;left:0;right:0;top:300px;height:260px;
+  background-image:linear-gradient(90deg,#3B3F4A 0,#3B3F4A 7px,transparent 7px);
+  background-size:420px 100%;background-repeat:repeat-x;background-position:0 0}
+.wire{position:absolute;left:0;right:0;height:2px;background:#3B3F4A}
+.wire.a{top:330px} .wire.b{top:346px}
+#grass{position:absolute;left:0;right:0;top:540px;height:60px;background:#4F8A63}
+
+/* Horizontal scroller + track */
+#scroller{position:absolute;left:0;top:0;width:1200px;height:760px;
+  overflow-x:auto;overflow-y:hidden;scroll-behavior:smooth;z-index:1;scrollbar-width:thin}
+#track{display:flex;height:760px}
+.panel{position:relative;flex:0 0 1200px;height:760px}
+
+/* Platform furniture (repeats on every station panel) */
+.floor{position:absolute;left:0;top:56px;width:1200px;height:20px;background:var(--cream)}
+.floor-edge{position:absolute;left:0;top:76px;width:1200px;height:6px;background:#1B3A6B}
+.pillar{position:absolute;top:82px;width:26px;height:480px;background:#D9D5C8}
+.pillar-base{position:absolute;top:500px;width:26px;height:62px;
+  background:repeating-linear-gradient(45deg,#111 0,#111 10px,var(--yellow) 10px,var(--yellow) 20px)}
+
+/* Yellow station name board */
+.yboard{position:absolute;left:70px;top:94px;width:490px;background:var(--yellow);
+  border:5px solid #111;border-radius:4px;color:#111;text-align:center;
+  box-shadow:0 8px 18px rgba(10,20,40,.25)}
+.yboard .bolt{position:absolute;top:8px;width:7px;height:7px;border-radius:50%;background:#111}
+.yboard .bolt.l{left:8px} .yboard .bolt.r{right:8px}
+.yboard .hi{padding:8px 12px 0;font-family:'Noto Sans Devanagari',sans-serif;
+  font-weight:700;font-size:30px;line-height:1.3}
+.yboard .en{padding:0 12px 8px;font-family:'Barlow Condensed',sans-serif;
+  font-weight:700;font-size:52px;line-height:1;text-transform:uppercase}
+.yboard .ends{display:flex;justify-content:space-between;gap:8px;padding:6px 14px;
+  border-top:4px solid #111;font-size:12px;font-weight:600;letter-spacing:.04em}
+
+/* LED marquee strip */
+.led{position:absolute;left:70px;top:292px;width:490px;height:46px;overflow:hidden;
+  background:#120A06;border:3px solid #2A2A2A;border-radius:3px;color:#FFB000;
+  font-family:'DotGothic16','Noto Sans Devanagari',monospace;font-size:21px;line-height:40px}
+
+/* Small blue bilingual sign + "stand behind the line" plate */
+.sign{position:absolute;left:576px;top:150px;width:124px;padding:10px 8px;background:#1B4FA0;
+  border:3px solid var(--card-edge);border-radius:4px;text-align:center;color:#fff}
+.sign .hi{font-family:'Noto Sans Devanagari',sans-serif;font-weight:700;font-size:18px;line-height:1.3}
+.sign .en{margin-top:2px;font-size:10px;font-weight:600;letter-spacing:.06em}
+.plate{position:absolute;left:70px;top:372px;width:150px;padding:6px 8px;background:var(--yellow);
+  border:3px solid #111;color:#111;text-align:center;font-size:10px;font-weight:600;
+  letter-spacing:.04em;text-transform:uppercase}
+
+/* Navy info card (the content) */
+.info{position:absolute;left:712px;top:90px;width:448px;height:392px;padding:13px 20px 10px;
+  display:flex;flex-direction:column;background:var(--card);border:5px solid var(--card-edge);
+  border-radius:6px;color:var(--card-text);box-shadow:0 10px 24px rgba(10,20,40,.25)}
+.info .kicker{flex:0 0 auto;font-size:12px;font-weight:600;letter-spacing:.14em;
+  text-transform:uppercase;color:var(--yellow)}
+.info .title{flex:0 0 auto;margin-top:6px;font-family:'Barlow Condensed',sans-serif;
+  font-weight:700;font-size:40px;line-height:1;text-transform:uppercase;color:#fff}
+.info .body{flex:1 1 auto;min-height:0;margin-top:6px;overflow-y:auto;
+  scrollbar-width:thin;scrollbar-color:var(--yellow) transparent}
+.info .body::-webkit-scrollbar{width:6px}
+.info .body::-webkit-scrollbar-thumb{background:var(--yellow);border-radius:3px}
+.info .row{display:flex;gap:10px;align-items:flex-start;padding:5px 0;border-top:1px solid var(--card-line)}
+.info .tag{flex:0 0 auto;min-width:46px;padding:3px 6px;background:var(--yellow);color:#111;
+  font-size:11px;font-weight:600;text-align:center;border-radius:3px}
+.info .text{flex:1 1 0;min-width:0;font-size:13.5px;line-height:1.45}
+.info .foot{flex:0 0 auto;display:flex;flex-wrap:wrap;gap:8px;justify-content:space-between;
+  align-items:center;padding-top:8px;border-top:1px solid var(--card-line)}
+.info .foot span{font-size:12px;color:#C9D5EE}
+.jump{display:inline-flex;align-items:center;min-height:44px;padding:0 16px;background:var(--yellow);
+  color:#111;font-weight:600;font-size:13px;text-decoration:none;border-radius:4px}
+
+/* Ground, rails, train */
+#ballast{position:absolute;left:0;right:0;bottom:0;height:98px;background-color:#8A857C;
+  background-image:radial-gradient(#6F6B63 1.5px,transparent 2px);background-size:14px 14px;
+  background-position:0 0;z-index:3;pointer-events:none}
+#sleepers{position:absolute;left:0;right:0;bottom:70px;height:20px;
+  background-image:linear-gradient(90deg,#4B3B2E 0,#4B3B2E 26px,transparent 26px);
+  background-size:64px 100%;background-repeat:repeat-x;background-position:0 0;z-index:3;pointer-events:none}
+#trainshadow{position:absolute;left:90px;bottom:82px;width:930px;height:14px;border-radius:50%;
+  background:rgba(0,0,0,.28);z-index:3;pointer-events:none}
+#rail{position:absolute;left:0;right:0;bottom:90px;height:6px;background:#5A5F68;z-index:3;pointer-events:none}
+#train{position:absolute;left:90px;top:512px;width:1172px;height:150px;display:flex;gap:6px;
+  z-index:3;pointer-events:none}
+
+/* Top nav */
+#topbar{position:absolute;left:0;right:0;top:0;height:56px;padding:0 20px;display:flex;
+  align-items:center;gap:14px;background:var(--ink);z-index:5}
+#topbar .brand{flex:0 0 auto;font-family:'Barlow Condensed',sans-serif;font-weight:700;
+  font-size:19px;letter-spacing:.04em;text-transform:uppercase;color:#fff}
+#nav{flex:1 1 auto;display:flex;justify-content:center;gap:2px}
+#nav a{display:inline-flex;align-items:center;min-height:44px;padding:0 9px;border-radius:4px;
+  color:var(--card-text);font-size:11px;font-weight:600;letter-spacing:.05em;
+  text-transform:uppercase;text-decoration:none}
+#nav a.active{background:var(--yellow);color:var(--ink)}
+.resume-btn{flex:0 0 auto;display:inline-flex;align-items:center;min-height:44px;padding:0 12px;
+  border:2px solid var(--yellow);border-radius:4px;font-size:11px;font-weight:600;
+  letter-spacing:.05em;text-transform:uppercase;text-decoration:none;color:var(--yellow)}
+
+#hint{position:absolute;left:24px;bottom:22px;padding:10px 16px;border-radius:4px;background:var(--ink);
+  color:#fff;font-size:13px;font-weight:500;z-index:4;pointer-events:none}
+
+/* Animations */
+.wheel{animation:spin .5s linear infinite}
+.bob{animation:bob .35s ease-in-out infinite alternate}
+.marquee{display:inline-block;white-space:nowrap;animation:marquee 20s linear infinite}
+.blink{animation:blink 1.2s steps(2,start) infinite}
+#train.paused .wheel,#train.paused.bob{animation-play-state:paused}
+@keyframes spin{to{transform:rotate(360deg)}}
+@keyframes bob{to{transform:translateY(-1.5px)}}
+@keyframes marquee{from{transform:translateX(100%)}to{transform:translateX(-100%)}}
+@keyframes blink{to{visibility:hidden}}
+
+@media (max-width:1240px){#frame{transform:scale(.8)}}
+@media (prefers-reduced-motion:reduce){
+  .wheel,.bob,.marquee,.blink{animation:none}
+  #scroller{scroll-behavior:auto}
+}

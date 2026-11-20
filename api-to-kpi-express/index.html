@@ -1,0 +1,132 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Anjali Chaturvedi — API to KPI Express</title>
+<link href="https://fonts.googleapis.com/css2?family=Barlow+Condensed:wght@600;700&family=DotGothic16&family=IBM+Plex+Mono:wght@400;500;600&family=Noto+Sans+Devanagari:wght@600;700&display=swap" rel="stylesheet">
+<link rel="icon" type="image/png" href="favicon.ico">
+<link rel="stylesheet" href="css/styles.css">
+</head>
+<body>
+<div id="frame">
+
+  <!-- Scene (behind the panels), driven by js/scene.js -->
+  <div id="sky"></div>
+  <div id="sunGlow"></div>
+  <div id="sun"></div>
+  <div class="cloud" id="cloud1"></div>
+  <div class="cloud" id="cloud2"></div>
+  <div class="cloud" id="cloud3"></div>
+  <div id="skyline"><svg aria-hidden="true" width="1200" height="200" viewBox="0 0 1200 200" style="display:block;flex:0 0 1200px"><g fill="#B3C4D9" opacity="0.75"><rect x="60" y="120" width="50" height="80"/><rect x="120" y="90" width="40" height="110"/><rect x="170" y="130" width="60" height="70"/><rect x="250" y="70" width="36" height="130"/><rect x="266" y="50" width="4" height="22"/><rect x="300" y="110" width="70" height="90"/><rect x="380" y="140" width="50" height="60"/><rect x="450" y="60" width="44" height="140"/><rect x="505" y="100" width="60" height="100"/><rect x="580" y="130" width="50" height="70"/><rect x="650" y="85" width="40" height="115"/><rect x="700" y="115" width="70" height="85"/><rect x="790" y="50" width="34" height="150"/><rect x="805" y="30" width="4" height="22"/><rect x="835" y="105" width="56" height="95"/><rect x="900" y="135" width="60" height="65"/><rect x="975" y="80" width="46" height="120"/><rect x="1030" y="120" width="70" height="80"/><rect x="1110" y="140" width="40" height="60"/></g></svg><svg aria-hidden="true" width="1200" height="200" viewBox="0 0 1200 200" style="display:block;flex:0 0 1200px"><g fill="#B3C4D9" opacity="0.75"><rect x="60" y="120" width="50" height="80"/><rect x="120" y="90" width="40" height="110"/><rect x="170" y="130" width="60" height="70"/><rect x="250" y="70" width="36" height="130"/><rect x="266" y="50" width="4" height="22"/><rect x="300" y="110" width="70" height="90"/><rect x="380" y="140" width="50" height="60"/><rect x="450" y="60" width="44" height="140"/><rect x="505" y="100" width="60" height="100"/><rect x="580" y="130" width="50" height="70"/><rect x="650" y="85" width="40" height="115"/><rect x="700" y="115" width="70" height="85"/><rect x="790" y="50" width="34" height="150"/><rect x="805" y="30" width="4" height="22"/><rect x="835" y="105" width="56" height="95"/><rect x="900" y="135" width="60" height="65"/><rect x="975" y="80" width="46" height="120"/><rect x="1030" y="120" width="70" height="80"/><rect x="1110" y="140" width="40" height="60"/></g></svg></div>
+  <div id="trees"><svg aria-hidden="true" width="1200" height="170" viewBox="0 0 1200 170" style="display:block;flex:0 0 1200px"><g fill="#7FAE88"><circle cx="0" cy="140" r="44"/><circle cx="70" cy="145" r="36"/><circle cx="140" cy="138" r="50"/><circle cx="230" cy="146" r="38"/><circle cx="300" cy="136" r="52"/><circle cx="390" cy="146" r="40"/><circle cx="470" cy="138" r="48"/><circle cx="560" cy="147" r="36"/><circle cx="640" cy="136" r="54"/><circle cx="730" cy="146" r="38"/><circle cx="820" cy="138" r="50"/><circle cx="900" cy="147" r="36"/><circle cx="990" cy="137" r="52"/><circle cx="1070" cy="146" r="40"/><circle cx="1140" cy="140" r="46"/><circle cx="1200" cy="140" r="44"/></g><g fill="#5F9570"><circle cx="40" cy="160" r="30"/><circle cx="190" cy="162" r="32"/><circle cx="340" cy="160" r="30"/><circle cx="520" cy="162" r="32"/><circle cx="690" cy="160" r="30"/><circle cx="860" cy="162" r="32"/><circle cx="1030" cy="160" r="30"/></g></svg><svg aria-hidden="true" width="1200" height="170" viewBox="0 0 1200 170" style="display:block;flex:0 0 1200px"><g fill="#7FAE88"><circle cx="0" cy="140" r="44"/><circle cx="70" cy="145" r="36"/><circle cx="140" cy="138" r="50"/><circle cx="230" cy="146" r="38"/><circle cx="300" cy="136" r="52"/><circle cx="390" cy="146" r="40"/><circle cx="470" cy="138" r="48"/><circle cx="560" cy="147" r="36"/><circle cx="640" cy="136" r="54"/><circle cx="730" cy="146" r="38"/><circle cx="820" cy="138" r="50"/><circle cx="900" cy="147" r="36"/><circle cx="990" cy="137" r="52"/><circle cx="1070" cy="146" r="40"/><circle cx="1140" cy="140" r="46"/><circle cx="1200" cy="140" r="44"/></g><g fill="#5F9570"><circle cx="40" cy="160" r="30"/><circle cx="190" cy="162" r="32"/><circle cx="340" cy="160" r="30"/><circle cx="520" cy="162" r="32"/><circle cx="690" cy="160" r="30"/><circle cx="860" cy="162" r="32"/><circle cx="1030" cy="160" r="30"/></g></svg></div>
+  <div id="masts"></div>
+  <div class="wire a"></div>
+  <div class="wire b"></div>
+  <div id="grass"></div>
+
+  <!-- Horizontal scroller. Station panels are injected into #track by js/render.js -->
+  <div id="scroller">
+    <div id="track">
+
+      <!-- Departure panel -->
+      <section id="stn0" class="panel">
+        <div class="floor"></div>
+        <div class="floor-edge"></div>
+        <div class="pillar" style="left:40px"></div>
+        <div class="pillar-base" style="left:40px"></div>
+        <div class="pillar" style="left:700px"></div>
+        <div class="pillar-base" style="left:700px"></div>
+
+        <div style="position:absolute;left:70px;top:96px;width:610px;height:392px;padding:20px 30px;background:var(--navy);border:5px solid var(--card-edge);border-radius:6px;color:var(--card-text)">
+          <div style="font-size:12px;font-weight:600;letter-spacing:.14em;text-transform:uppercase;color:var(--yellow)">Platform 1 · Train 230104 · API to KPI Express</div>
+          <h1 style="margin:10px 0 0;font-family:'Barlow Condensed',sans-serif;font-weight:700;font-size:70px;line-height:.92;text-transform:uppercase;color:#fff"><span style="display:block">Anjali</span><span style="display:block">Chaturvedi</span></h1>
+          <p style="margin-top:12px;max-width:540px;font-size:13.5px;line-height:1.5">A curious kid who loves building things and breaking them to see why they work. Engineering by design, product by curiosity.</p>
+          <div style="display:flex;flex-wrap:wrap;align-items:center;gap:14px;margin-top:18px">
+            <a class="jump" href="#stn1">Board the train →</a>
+            <span style="font-size:12px;color:#C9D5EE">or scroll sideways</span>
+          </div>
+        </div>
+
+        <div style="position:absolute;left:712px;top:90px;width:448px;background:#FAF7F0;color:#14110F;border-radius:6px;box-shadow:0 10px 24px rgba(10,20,40,.25)">
+          <div style="display:flex;justify-content:space-between;gap:8px;padding:10px 18px;background:#1B4FA0;color:#fff;border-radius:6px 6px 0 0;font-size:12px;font-weight:600;letter-spacing:.1em;text-transform:uppercase"><span>Reservation slip</span><span>Status: CNF</span></div>
+          <div style="padding:14px 18px 4px">
+            <div style="font-size:10px;letter-spacing:.12em;text-transform:uppercase;color:#5A5448">Passenger</div>
+            <div style="margin-top:2px;font-weight:600;font-size:19px">ANJALI CHATURVEDI</div>
+            <div style="display:flex;flex-wrap:wrap;gap:10px 16px;margin-top:10px">
+              <div style="flex:1 1 190px"><div style="font-size:10px;letter-spacing:.12em;text-transform:uppercase;color:#5A5448">Train</div><div style="margin-top:2px;font-weight:600;font-size:13px">230104 · API TO KPI EXP</div></div>
+              <div style="flex:1 1 190px"><div style="font-size:10px;letter-spacing:.12em;text-transform:uppercase;color:#5A5448">Class</div><div style="margin-top:2px;font-weight:600;font-size:13px">APM · COACH A1 · SEAT 23</div></div>
+              <div style="flex:1 1 190px"><div style="font-size:10px;letter-spacing:.12em;text-transform:uppercase;color:#5A5448">From / to</div><div style="margin-top:2px;font-weight:600;font-size:13px">ENGINEERING TO PRODUCT</div></div>
+              <div style="flex:1 1 190px"><div style="font-size:10px;letter-spacing:.12em;text-transform:uppercase;color:#5A5448">Quota</div><div style="margin-top:2px;font-weight:600;font-size:13px">TATKAL</div></div>
+            </div>
+            <div style="margin-top:10px;font-size:10px;letter-spacing:.12em;text-transform:uppercase;color:#5A5448">Remarks</div>
+            <div style="margin-top:2px;font-weight:600;font-size:12.5px;line-height:1.45">Ships fast. Sings the wrong lyrics with full confidence.</div>
+          </div>
+          <div style="margin:8px 18px 0;border-top:2px dashed #14110F"></div>
+          <div style="margin:12px 18px 14px;height:34px;background:repeating-linear-gradient(90deg,#14110F 0,#14110F 2px,transparent 2px,transparent 5px,#14110F 5px,#14110F 6px,transparent 6px,transparent 10px,#14110F 10px,#14110F 13px,transparent 13px,transparent 16px)"></div>
+        </div>
+
+        <div class="led" style="top:502px;left:70px;width:610px"><span class="marquee">यात्रीगण कृपया ध्यान दें · Train 230104 API to KPI Express · Running on time · Standing on platform 1</span></div>
+      </section>
+
+      <!-- stations injected here by render.js -->
+
+      <!-- Contact panel -->
+      <section id="stn5" class="panel">
+        <div class="floor"></div>
+        <div class="floor-edge"></div>
+        <div class="pillar" style="left:40px"></div>
+        <div class="pillar-base" style="left:40px"></div>
+        <div class="pillar" style="left:628px"></div>
+        <div class="pillar-base" style="left:628px"></div>
+        <div class="yboard">
+          <span class="bolt l"></span><span class="bolt r"></span>
+          <div class="hi">अगला स्टेशन</div>
+          <div class="en">Next stop</div>
+          <div style="padding:8px 14px;border-top:4px solid #111;font-size:15px;font-weight:600"><span class="blink">●</span> Your team</div>
+        </div>
+        <div class="led"><span class="marquee">Train 230104 · Running on time · Chart prepared · शुभ यात्रा</span></div>
+        <div class="plate">Booking open</div>
+        <div class="info">
+          <div class="kicker">Next stop · Booking open</div>
+          <div class="title">Where to next?</div>
+          <div class="body">
+            <div class="row"><div class="text">Got something cool to build? I'd love to hear about it.</div></div>
+            <div class="row"><div class="text">Looking for product roles. Remote, on site, anywhere in India.</div></div>
+            <div class="row"><div class="text">I can board in 30 days.</div></div>
+          </div>
+          <div class="foot" style="justify-content:flex-start">
+            <a class="jump" data-link="email" href="mailto:anjaliichaturvedi@gmail.com">Email me</a>
+            <a href="https://www.linkedin.com/in/anjali-chaturvedi/" target="_blank" rel="noopener noreferrer" style="display:inline-flex;align-items:center;min-height:44px;padding:0 12px;border:2px solid var(--card-text);color:var(--card-text);font-weight:600;font-size:13px;text-decoration:none;border-radius:4px"> LinkedIn </a>            
+            <a data-link="github" href="https://www.github.com/anjalichaturvedi/" target="_blank" style="display:inline-flex;align-items:center;min-height:44px;padding:0 12px;border:2px solid var(--card-text);color:var(--card-text);font-weight:600;font-size:13px;text-decoration:none;border-radius:4px">GitHub</a>
+            <a href="https://drive.google.com/file/d/1IYwdkyZyB92oiCIDqkqOz78ZVUlbFmz_/view?usp=sharing" target="_blank" rel="noopener noreferrer" style="display:inline-flex;align-items:center;min-height:44px;padding:0 12px;border:2px solid var(--card-text);color:var(--card-text);font-weight:600;font-size:13px;text-decoration:none;border-radius:4px">Résumé</a>
+          </div>
+        </div>
+      </section>
+
+    </div>
+  </div>
+
+  <!-- Ground + train overlay -->
+  <div id="ballast"></div>
+  <div id="sleepers"></div>
+  <div id="trainshadow"></div>
+  <div id="rail"></div>
+  <div class="bob paused" id="train"><div style="position:relative;flex:0 0 330px;height:150px"><svg aria-hidden="true" width="330" height="130" viewBox="0 0 330 130" style="position:absolute;left:0;top:0"><defs><linearGradient id="cb" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#3F74C9"/><stop offset="0.55" stop-color="#2557A7"/><stop offset="1" stop-color="#1B427F"/></linearGradient><g id="cw"><rect x="0" y="34" width="32" height="36" rx="4" fill="#1E2B3A"/><rect x="0" y="34" width="32" height="13" rx="4" fill="#8FB3DB" opacity="0.5"/><line x1="8" y1="34" x2="8" y2="70" stroke="#D9E2EE" stroke-width="1.5"/><line x1="16" y1="34" x2="16" y2="70" stroke="#D9E2EE" stroke-width="1.5"/><line x1="24" y1="34" x2="24" y2="70" stroke="#D9E2EE" stroke-width="1.5"/></g></defs><path d="M6 16 Q6 4 20 4 H310 Q324 4 324 16 V22 H6 Z" fill="#CBD2DB"/><ellipse cx="70" cy="4" rx="14" ry="3" fill="#A9B3BF"/><ellipse cx="165" cy="4" rx="14" ry="3" fill="#A9B3BF"/><ellipse cx="260" cy="4" rx="14" ry="3" fill="#A9B3BF"/><rect x="2" y="18" width="326" height="94" rx="6" fill="url(#cb)"/><rect x="2" y="80" width="326" height="9" fill="#F2EFE6"/><rect x="12" y="30" width="22" height="64" rx="3" fill="#183868" stroke="#0F2A52"/><rect x="16" y="36" width="14" height="22" fill="#1E2B3A"/><rect x="296" y="30" width="22" height="64" rx="3" fill="#183868" stroke="#0F2A52"/><rect x="300" y="36" width="14" height="22" fill="#1E2B3A"/><use href="#cw" x="44"/><use href="#cw" x="86"/><use href="#cw" x="128"/><use href="#cw" x="170"/><use href="#cw" x="212"/><use href="#cw" x="254"/><line x1="9" y1="30" x2="9" y2="96" stroke="#D9D9D9" stroke-width="2"/><line x1="321" y1="30" x2="321" y2="96" stroke="#D9D9D9" stroke-width="2"/><text x="165" y="104" text-anchor="middle" font-size="9" font-family="IBM Plex Mono,monospace" font-weight="600" fill="#F2EFE6">230104 · A1</text><rect x="14" y="112" width="302" height="10" fill="#1D2026"/><rect x="110" y="116" width="70" height="12" rx="5" fill="#2A2E36"/><rect x="200" y="116" width="40" height="10" rx="4" fill="#2A2E36"/></svg><div style="position:absolute;left:34px;top:118px;width:100px;height:14px;background:#22252B"></div><div style="position:absolute;left:196px;top:118px;width:100px;height:14px;background:#22252B"></div><div class="wheel" style="position:absolute;left:40px;top:120px;width:30px;height:30px;border-radius:50%;border:4px solid #3A3D45;box-sizing:border-box;background:linear-gradient(#9AA0A6,#9AA0A6) center/100% 3px no-repeat,linear-gradient(#9AA0A6,#9AA0A6) center/3px 100% no-repeat,#15171B"></div><div class="wheel" style="position:absolute;left:90px;top:120px;width:30px;height:30px;border-radius:50%;border:4px solid #3A3D45;box-sizing:border-box;background:linear-gradient(#9AA0A6,#9AA0A6) center/100% 3px no-repeat,linear-gradient(#9AA0A6,#9AA0A6) center/3px 100% no-repeat,#15171B"></div><div class="wheel" style="position:absolute;left:202px;top:120px;width:30px;height:30px;border-radius:50%;border:4px solid #3A3D45;box-sizing:border-box;background:linear-gradient(#9AA0A6,#9AA0A6) center/100% 3px no-repeat,linear-gradient(#9AA0A6,#9AA0A6) center/3px 100% no-repeat,#15171B"></div><div class="wheel" style="position:absolute;left:252px;top:120px;width:30px;height:30px;border-radius:50%;border:4px solid #3A3D45;box-sizing:border-box;background:linear-gradient(#9AA0A6,#9AA0A6) center/100% 3px no-repeat,linear-gradient(#9AA0A6,#9AA0A6) center/3px 100% no-repeat,#15171B"></div></div><div style="position:relative;flex:0 0 330px;height:150px"><svg aria-hidden="true" width="330" height="130" viewBox="0 0 330 130" style="position:absolute;left:0;top:0"><defs><linearGradient id="cb" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#3F74C9"/><stop offset="0.55" stop-color="#2557A7"/><stop offset="1" stop-color="#1B427F"/></linearGradient><g id="cw"><rect x="0" y="34" width="32" height="36" rx="4" fill="#1E2B3A"/><rect x="0" y="34" width="32" height="13" rx="4" fill="#8FB3DB" opacity="0.5"/><line x1="8" y1="34" x2="8" y2="70" stroke="#D9E2EE" stroke-width="1.5"/><line x1="16" y1="34" x2="16" y2="70" stroke="#D9E2EE" stroke-width="1.5"/><line x1="24" y1="34" x2="24" y2="70" stroke="#D9E2EE" stroke-width="1.5"/></g></defs><path d="M6 16 Q6 4 20 4 H310 Q324 4 324 16 V22 H6 Z" fill="#CBD2DB"/><ellipse cx="70" cy="4" rx="14" ry="3" fill="#A9B3BF"/><ellipse cx="165" cy="4" rx="14" ry="3" fill="#A9B3BF"/><ellipse cx="260" cy="4" rx="14" ry="3" fill="#A9B3BF"/><rect x="2" y="18" width="326" height="94" rx="6" fill="url(#cb)"/><rect x="2" y="80" width="326" height="9" fill="#F2EFE6"/><rect x="12" y="30" width="22" height="64" rx="3" fill="#183868" stroke="#0F2A52"/><rect x="16" y="36" width="14" height="22" fill="#1E2B3A"/><rect x="296" y="30" width="22" height="64" rx="3" fill="#183868" stroke="#0F2A52"/><rect x="300" y="36" width="14" height="22" fill="#1E2B3A"/><use href="#cw" x="44"/><use href="#cw" x="86"/><use href="#cw" x="128"/><use href="#cw" x="170"/><use href="#cw" x="212"/><use href="#cw" x="254"/><line x1="9" y1="30" x2="9" y2="96" stroke="#D9D9D9" stroke-width="2"/><line x1="321" y1="30" x2="321" y2="96" stroke="#D9D9D9" stroke-width="2"/><text x="165" y="104" text-anchor="middle" font-size="9" font-family="IBM Plex Mono,monospace" font-weight="600" fill="#F2EFE6">230104 · A2</text><rect x="14" y="112" width="302" height="10" fill="#1D2026"/><rect x="110" y="116" width="70" height="12" rx="5" fill="#2A2E36"/><rect x="200" y="116" width="40" height="10" rx="4" fill="#2A2E36"/></svg><div style="position:absolute;left:34px;top:118px;width:100px;height:14px;background:#22252B"></div><div style="position:absolute;left:196px;top:118px;width:100px;height:14px;background:#22252B"></div><div class="wheel" style="position:absolute;left:40px;top:120px;width:30px;height:30px;border-radius:50%;border:4px solid #3A3D45;box-sizing:border-box;background:linear-gradient(#9AA0A6,#9AA0A6) center/100% 3px no-repeat,linear-gradient(#9AA0A6,#9AA0A6) center/3px 100% no-repeat,#15171B"></div><div class="wheel" style="position:absolute;left:90px;top:120px;width:30px;height:30px;border-radius:50%;border:4px solid #3A3D45;box-sizing:border-box;background:linear-gradient(#9AA0A6,#9AA0A6) center/100% 3px no-repeat,linear-gradient(#9AA0A6,#9AA0A6) center/3px 100% no-repeat,#15171B"></div><div class="wheel" style="position:absolute;left:202px;top:120px;width:30px;height:30px;border-radius:50%;border:4px solid #3A3D45;box-sizing:border-box;background:linear-gradient(#9AA0A6,#9AA0A6) center/100% 3px no-repeat,linear-gradient(#9AA0A6,#9AA0A6) center/3px 100% no-repeat,#15171B"></div><div class="wheel" style="position:absolute;left:252px;top:120px;width:30px;height:30px;border-radius:50%;border:4px solid #3A3D45;box-sizing:border-box;background:linear-gradient(#9AA0A6,#9AA0A6) center/100% 3px no-repeat,linear-gradient(#9AA0A6,#9AA0A6) center/3px 100% no-repeat,#15171B"></div></div><div style="position:relative;flex:0 0 250px;height:150px"><svg aria-hidden="true" width="250" height="160" viewBox="0 -30 250 160" style="position:absolute;left:0;top:-30px"><defs><linearGradient id="lb" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#2F68BD"/><stop offset="0.6" stop-color="#1F4E9C"/><stop offset="1" stop-color="#173B77"/></linearGradient></defs><path d="M90 14 L120 -14 L150 14" stroke="#2A2E36" stroke-width="3" fill="none"/><line x1="104" y1="-14" x2="136" y2="-14" stroke="#2A2E36" stroke-width="4"/><path d="M2 26 Q2 14 14 14 H190 Q234 14 246 62 L248 112 H2 Z" fill="url(#lb)"/><rect x="2" y="82" width="238" height="8" fill="#F2EFE6"/><path d="M204 14 Q234 14 246 62 L248 112 H214 Z" fill="#F2B705"/><path d="M208 24 Q228 26 238 56 H212 Z" fill="#17283D"/><rect x="150" y="28" width="38" height="30" rx="4" fill="#17283D"/><rect x="150" y="28" width="38" height="11" rx="4" fill="#8FB3DB" opacity="0.5"/><g stroke="#12305F" stroke-width="2"><line x1="20" y1="30" x2="90" y2="30"/><line x1="20" y1="38" x2="90" y2="38"/><line x1="20" y1="46" x2="90" y2="46"/><line x1="20" y1="54" x2="90" y2="54"/><line x1="20" y1="62" x2="90" y2="62"/></g><circle cx="238" cy="84" r="6" fill="#FFF3C4"/><rect x="244" y="98" width="6" height="10" fill="#3A3D45"/><rect x="12" y="112" width="226" height="10" fill="#1D2026"/></svg><div style="position:absolute;left:30px;top:124px;width:190px;height:14px;background:#22252B"></div><div class="wheel" style="position:absolute;left:30px;top:120px;width:30px;height:30px;border-radius:50%;border:4px solid #3A3D45;box-sizing:border-box;background:linear-gradient(#9AA0A6,#9AA0A6) center/100% 3px no-repeat,linear-gradient(#9AA0A6,#9AA0A6) center/3px 100% no-repeat,#15171B"></div><div class="wheel" style="position:absolute;left:76px;top:120px;width:30px;height:30px;border-radius:50%;border:4px solid #3A3D45;box-sizing:border-box;background:linear-gradient(#9AA0A6,#9AA0A6) center/100% 3px no-repeat,linear-gradient(#9AA0A6,#9AA0A6) center/3px 100% no-repeat,#15171B"></div><div class="wheel" style="position:absolute;left:144px;top:120px;width:30px;height:30px;border-radius:50%;border:4px solid #3A3D45;box-sizing:border-box;background:linear-gradient(#9AA0A6,#9AA0A6) center/100% 3px no-repeat,linear-gradient(#9AA0A6,#9AA0A6) center/3px 100% no-repeat,#15171B"></div><div class="wheel" style="position:absolute;left:190px;top:120px;width:30px;height:30px;border-radius:50%;border:4px solid #3A3D45;box-sizing:border-box;background:linear-gradient(#9AA0A6,#9AA0A6) center/100% 3px no-repeat,linear-gradient(#9AA0A6,#9AA0A6) center/3px 100% no-repeat,#15171B"></div></div></div>
+
+  <!-- Top nav -->
+  <div id="topbar">
+    <div class="brand">Anjali Chaturvedi · 230104</div>
+    <nav id="nav"><a href="#stn0">Start</a><a href="#stn1">School</a><a href="#stn2">Nodebrew</a><a href="#stn3">JIIT</a><a href="#stn4">Nutrabay</a><a href="#stn5">Next</a></nav>
+    <a class="resume-btn" data-link="resume" href="#">Résumé</a>
+  </div>
+
+  <div id="hint">Scroll sideways and the train moves →</div>
+</div>
+
+<script src="js/data.js"></script>
+<script src="js/render.js"></script>
+<script src="js/scene.js"></script>
+<script src="js/app.js"></script>
+</body>
+</html>
