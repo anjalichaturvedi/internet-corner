@@ -10,33 +10,33 @@ One long platform you scroll through horizontally. Each station is a chapter: sc
 
 ## Run it locally
 
-Clone the repo and open the file.
+This project lives in a folder inside the `internet-corner` repo. Clone the repo, go into the folder and open the file.
 
 ```bash
-git clone https://github.com/anjalichaturvedi/api-to-kpi-express.git
-cd api-to-kpi-express
-open index.html        # or just double-click it
+git clone https://github.com/anjalichaturvedi/internet-corner.git
+cd internet-corner/api-to-kpi-express
+open index.html # or just double-click it
 ```
 
 That is the whole setup. The files load as plain scripts sharing one global, so it runs straight from the file system. No server needed. Fonts come from Google Fonts, so the first load wants an internet connection.
 
 ## Deploy
 
-It is fully static, so any host works. Keep `css/` and `js/` next to `index.html`.
+It is fully static, so any host works. Keep `css/` and `js/` next to `index.html`, and point the host at the `api-to-kpi-express` folder.
 
 - Drag the folder onto [Netlify Drop](https://app.netlify.com/drop)
-- `vercel` from the project root
-- Push to a repo and turn on GitHub Pages
+- Run `vercel` from the `api-to-kpi-express` folder
+- Or turn on GitHub Pages for the repo
 
 ## How it works
 
 There is no animation library. One scroll listener reads how far across you are and drives everything from that single number:
 
-- the sky gradient interpolates through five keyframes, morning to night
-- the sun arcs up and over, clouds and the skyline drift at different speeds for parallax
-- the masts, sleepers and rail shift to sell the motion
-- the train's wheels spin while you scroll and pause when you stop
-- the top nav highlights the station you are nearest
+- The sky gradient interpolates through five keyframes, morning to night
+- The sun arcs up and over, while clouds and the skyline drift at different speeds for parallax
+- The masts, sleepers and rail shift to sell the motion
+- The train's wheels spin while you scroll and pause when you stop
+- The top nav highlights the station you are nearest
 
 A vertical mouse wheel is mapped to horizontal scroll, except over a card that still has more to show, where it scrolls the card instead.
 
@@ -58,7 +58,7 @@ Almost everything lives in `js/data.js`.
 - Change any wording in `SITE.STATIONS`.
 - Add a station by copying one block. The panel count, track width and nav all adjust on their own.
 - A line with a `tag` renders a small yellow pill. A line without one is plain text.
-- Links sit in `SITE.META` at the top of the file. Drop in your LinkedIn and resume URLs where the `#` placeholders are.
+- Links sit in `SITE.META` at the top of the file. Update the LinkedIn and resume URLs there.
 
 Colours, fonts and sizes are CSS variables at the top of `css/styles.css`.
 
